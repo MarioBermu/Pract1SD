@@ -41,6 +41,10 @@ def callback(ch, method, properties, body):
 # Conectar a RabbitMQ
 connection = pika.BlockingConnection(pika.ConnectionParameters(host=rabbitmq_host))
 channel = connection.channel()
+
+channel.queue_delete(queue=queue_receive)
+channel.queue_delete(queue=queue_send)
+
 channel.queue_declare(queue=queue_receive)
 channel.queue_declare(queue=queue_send)
 
