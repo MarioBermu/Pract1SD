@@ -19,7 +19,7 @@ insult_list = server.get_insult_list()
 print("Lista de insultos:", insult_list)
 
 try:
-    while True:
+    while i<5:
         random_insult = server.get_random_insult()
         print("Insulto aleatorio:", random_insult)
         time.sleep(3)  # Espera 3 segundos antes de la siguiente solicitud

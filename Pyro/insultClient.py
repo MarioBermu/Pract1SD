@@ -18,9 +18,9 @@ print("Lista de insultos:", insults)
 #random_insult = insult_service.get_random_insult()
 #print("Insulto aleatorio:", random_insult)
 
-# Bucle infinito para obtener insultos aleatorios cada 3 segundos
+# Bucle para obtener insultos aleatorios cada 3 segundos
 try:
-    while True:
+    while i<5:
         random_insult = insult_service.get_random_insult()
         print("Insulto aleatorio:", random_insult)
         time.sleep(3)  # Espera 3 segundos antes de la siguiente solicitud
