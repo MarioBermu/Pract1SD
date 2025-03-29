@@ -3,7 +3,8 @@ import time
 
 # Lista de servidores a ejecutar
 servers = [
-    ["python3", "insultService.py"]  # Más adelante añadiremos otros aquí
+    ["python3", "Pyro/insultService.py"],
+    ["python3", "XMLRPC/insult_service.py"], 
 ]
 
 processes = []

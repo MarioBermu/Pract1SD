@@ -2,6 +2,7 @@ import Pyro4
 import random
 
 @Pyro4.expose
+@Pyro4.behavior(instance_mode="single")
 class InsultService:
     def __init__(self):
         self.insults = []
@@ -23,6 +24,7 @@ class InsultService:
 # Inicializar servidor PyRO4
 daemon = Pyro4.Daemon()  # Servidor PyRO4
 ns = Pyro4.locateNS()  # Buscar el Name Server de PyRO4
+insult_service = InsultService()
 uri = daemon.register(InsultService)  # Registrar el objeto remoto
 ns.register("insult.service", uri)  # Registrar el servicio con un nombre
 
