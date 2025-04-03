@@ -1,12 +1,15 @@
 from xmlrpc.server import SimpleXMLRPCServer
 from xmlrpc.server import SimpleXMLRPCRequestHandler
 import re
+from socketserver import ThreadingMixIn
 # Clase que maneja las solicitudes XML-RPC
+class ThreadedXMLRPCServer(ThreadingMixIn, SimpleXMLRPCServer):
+    pass
 class RequestHandler(SimpleXMLRPCRequestHandler):
     rpc_paths = ('/RPC2',)
 
 # Lista de insultos prohibidos
-insults = ["idiota", "torpe", "patán", "zoquete", "burro", "cabezón", "menso", "necio"]
+insults = ["idiota", "torpe", "patán", "zoquete", "burro", "cabezón", "menso", "necio","tonto"]
 
 # Lista donde se almacenarán los textos filtrados
 filtered_texts = []
@@ -23,7 +26,8 @@ def get_filtered_texts():
     return filtered_texts
 
 # Configurar el servidor XML-RPC
-server = SimpleXMLRPCServer(("localhost", 8001), requestHandler=RequestHandler, allow_none=True)
+server = ThreadedXMLRPCServer(("localhost", 8001), requestHandler=RequestHandler, allow_none=True)
+#server = SimpleXMLRPCServer(("localhost", 8001), requestHandler=RequestHandler, allow_none=True)
 print("InsultFilterService is running on port 8001...")
 
 # Registrar funciones en el servidor

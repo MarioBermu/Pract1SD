@@ -1,7 +1,11 @@
 from xmlrpc.server import SimpleXMLRPCServer
 from xmlrpc.server import SimpleXMLRPCRequestHandler
 import random
+from socketserver import ThreadingMixIn
+
 # Clase que maneja las solicitudes XML-RPC
+class ThreadedXMLRPCServer(ThreadingMixIn, SimpleXMLRPCServer):
+    pass
 class RequestHandler(SimpleXMLRPCRequestHandler):
     rpc_paths = ('/RPC2',)
 
@@ -10,6 +14,7 @@ insult_list = []
 
 def store_insult(insult):
     """Almacena un insulto si no está en la lista"""
+    print(f"[XML-RPC] Storing insult: {insult}")
     if insult not in insult_list:
         insult_list.append(insult)
         return f"Stored new insult: {insult}"
@@ -24,7 +29,9 @@ def get_random_insult():
     return random.choice(insult_list)
 
 # Configurar el servidor XML-RPC
-server = SimpleXMLRPCServer(("localhost", 8000), requestHandler=RequestHandler, allow_none=True)
+#server = SimpleXMLRPCServer(("localhost", 8000), requestHandler=RequestHandler, allow_none=True)
+server = ThreadedXMLRPCServer(("localhost", 8000), requestHandler=RequestHandler, allow_none=True)
+
 print("InsultService is running on port 8000...")
 
 # Registrar funciones en el servidor

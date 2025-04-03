@@ -1,60 +1,59 @@
 import json
 import matplotlib.pyplot as plt
-import numpy as np
 
-def load_results(filename="results.json"):
-    with open(filename, "r") as file:
+# Cargar los datos desde los archivos JSON
+def load_results(file_path):
+    """Carga resultados desde un archivo JSON."""
+    with open(file_path, "r") as file:
         return json.load(file)
 
-def calculate_speedup(results):
-    """Calcula y grafica el speedup para Pyro4 y XML-RPC."""
-    services = {"Pyro4": [], "XML-RPC": []}
+# Obtener tiempos promedios de ejecución para cada número de nodos
+def calculate_avg_times(results):
+    """Calcula tiempos promedios agrupados por número de nodos."""
+    times_per_node = {}
     
     for entry in results:
-        if entry["operation"] == "send":
-            services[entry["service"].strip()].append(entry["time"])
-    
-    avg_times = {service: np.mean(times) for service, times in services.items()}
-    
-    T1 = max(avg_times.values())  # Consideramos el mayor tiempo como referencia para speedup
-    speedups = {service: T1 / avg_times[service] for service in avg_times}
-    
-    plt.bar(speedups.keys(), speedups.values(), color=["blue", "red"])
-    plt.xlabel("Tecnología")
-    plt.ylabel("Speedup")
-    plt.title("Comparación de Speedup")
-    plt.show()
+        num_nodes = entry.get("num_nodes", 1)  # Valor por defecto: 1
+        time = entry.get("time", 0)  # Asegurar que haya un tiempo registrado
+        
+        if num_nodes not in times_per_node:
+            times_per_node[num_nodes] = []
+        times_per_node[num_nodes].append(time)
 
-def calculate_dynamic_scaling(results, lambda_rate=10, C=5, B=20, T_r=2):
-    """Calcula y grafica el número de trabajadores necesarios para escalado dinámico."""
-    services = {"Pyro4": [], "XML-RPC": []}
+    # Calcular promedios
+    avg_times = {n: sum(times) / len(times) for n, times in times_per_node.items()}
     
-    for entry in results:
-        if entry["operation"] == "send":
-            services[entry["service"].strip()].append(entry["time"])
-    
-    avg_processing_time = {service: np.mean(times) for service, times in services.items()}
-    
-    N_msg_arrival = {service: np.ceil((lambda_rate * avg_processing_time[service]) / C) for service in avg_processing_time}
-    N_backlog = {service: np.ceil((B + (lambda_rate * T_r)) / C) for service in avg_processing_time}
-    
-    x = np.arange(len(avg_processing_time))
-    width = 0.4
-    
-    fig, ax = plt.subplots()
-    ax.bar(x - width/2, N_msg_arrival.values(), width, label="Escalado por llegada")
-    ax.bar(x + width/2, N_backlog.values(), width, label="Escalado con backlog")
-    
-    ax.set_xlabel("Tecnología")
-    ax.set_ylabel("Número de Trabajadores Requeridos")
-    ax.set_title("Comparación de Escalabilidad Dinámica")
-    ax.set_xticks(x)
-    ax.set_xticklabels(N_msg_arrival.keys())
-    ax.legend()
-    
-    plt.show()
+    return dict(sorted(avg_times.items()))  # Ordenar por número de nodos
 
-if __name__ == "__main__":
-    results = load_results()
-    calculate_speedup(results)
-    calculate_dynamic_scaling(results)
+# Cargar archivos JSON
+results_service = load_results("results.json")
+results_filter = load_results("results_filter.json")
+
+# Calcular tiempos promedios
+times_service = calculate_avg_times(results_service)
+times_filter = calculate_avg_times(results_filter)
+
+# Usar tiempos del servicio como referencia para T1
+T1_service = times_service.get(1, None)
+T1_filter = times_filter.get(1, None)
+
+# Evitar errores si no hay datos de un solo nodo
+if T1_service is None or T1_filter is None:
+    raise ValueError("No hay datos para 1 nodo, no se puede calcular el speedup.")
+
+# Calcular speedup para cada número de nodos
+speedup_service = {n: (T1_service / Tn) if Tn > 0 else 0 for n, Tn in times_service.items()}
+speedup_filter = {n: (T1_filter / Tn) if Tn > 0 else 0 for n, Tn in times_filter.items()}
+
+# Graficar Speedup vs. Número de nodos
+plt.figure(figsize=(8, 5))
+plt.plot(speedup_service.keys(), speedup_service.values(), label="InsultService", marker="o", linestyle="-")
+plt.plot(speedup_filter.keys(), speedup_filter.values(), label="InsultFilter", marker="x", linestyle="--")
+
+plt.xlabel("Número de nodos")
+plt.ylabel("Speedup")
+plt.title("Speedup vs. Número de Nodos")
+plt.legend()
+plt.grid(True)
+
+plt.show()

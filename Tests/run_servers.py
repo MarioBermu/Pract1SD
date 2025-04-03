@@ -5,6 +5,8 @@ import time
 servers = [
     ["python3", "Pyro/insultService.py"],
     ["python3", "XMLRPC/insult_service.py"], 
+    ["python3", "Pyro/insultFilter.py"],
+    ["python3", "XMLRPC/insult_service_filter.py"]
 ]
 
 processes = []
