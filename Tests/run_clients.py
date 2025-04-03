@@ -6,12 +6,36 @@ import json
 from datetime import datetime
 import concurrent.futures
 import psutil
+import sys
+import random
+
+if len(sys.argv) < 2:
+    print("Uso: python3 run_clients.py <num_nodos>")
+    sys.exit(1)
+
+num_nodos = int(sys.argv[1])
+
+
+SERVER_LIST_FILE = "active_servers.json"
+
+def get_all_xmlrpc_servers():
+    """Devuelve una lista con todos los proxies XML-RPC disponibles."""
+    try:
+        with open(SERVER_LIST_FILE, "r") as file:
+            servers = json.load(file)
+            return [xmlrpc.client.ServerProxy(f"http://localhost:{port}/RPC2", allow_none=True) for port in servers]
+    except (FileNotFoundError, json.JSONDecodeError):
+        return []
+
+xmlrpc_servers = get_all_xmlrpc_servers()
+if not xmlrpc_servers:
+    print("⚠️ No hay servidores XML-RPC disponibles")
+    sys.exit(1)
+
 
 pyro_insult_service = Pyro4.Proxy("PYRONAME:insult.service")
-xmlrpc_insult_service = xmlrpc.client.ServerProxy("http://localhost:8000/RPC2", allow_none=True)
-xmlrpc_insult_service._ServerProxy__transport.timeout = 10
-print(xmlrpc_insult_service.get_insult_list()) 
-#print("[XML-RPC] Insulto aleatorio:", xmlrpc_insult_service.get_random_insult())
+#xmlrpc_insult_service = xmlrpc.client.ServerProxy("http://localhost:8000/RPC2", allow_none=True)
+
 
 insults = ["Tonto", "Subnormal", "Zoquete", "Patán", "Idiota", "Sabandija", "Cretino", "Bobalicón",
            "Lelo", "Mamarracho", "Papanatas", "Bocazas", "Cabezón", "Lerdos", "Tarado", "Tontaina",
@@ -21,22 +45,6 @@ RESULTS_FILE = "results.json"
 LOCK = multiprocessing.Lock()  # Para evitar escritura simultánea en JSON
 RESULTS = []
 
-
-def count_active_servers():
-    """Cuenta cuántos procesos de los servidores están en ejecución."""
-    server_keywords = ["insultService", "insult_service"]
-    active_servers = 0
-
-    for proc in psutil.process_iter(attrs=['cmdline']):
-        try:
-            cmdline = proc.info.get("cmdline", [])
-            if any(keyword in " ".join(cmdline) for keyword in server_keywords):
-                active_servers += 1
-        except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
-            continue  # Evita errores si un proceso desaparece o no se puede acceder
-
-    print(f"🔍 DEBUG: Servidores activos detectados: {active_servers}")  # 🚀 Debugging
-    return active_servers
 
 def save_result(data):
     """Guarda los resultados en el JSON de forma concurrente."""
@@ -59,70 +67,45 @@ def write_results_to_file():
 
 def send_insults_pyro():
     """Cada cliente envía 100 insultos al servidor Pyro4"""
+    start_time = time.time()
     for _ in range(100):
-        start_time = time.time()
         insult = insults[_ % len(insults)]
         pyro_insult_service.add_insult(insult)
-        end_time = time.time()
+    
+    end_time = time.time()
         
-
-        save_result({
-            "service": "Pyro4",
-            "operation": "send",
-            "time": end_time - start_time,
-            "timestamp": datetime.now().isoformat()
-        })
 
 def send_insults_xmlrpc():
     """Cada cliente envía 100 insultos al servidor XML-RPC"""
-    for _ in range(2):
-        start_time = time.time()
+    start_time = time.time()
+    for _ in range(55):
         insult = insults[_ % len(insults)]
         try:
-            xmlrpc_insult_service.store_insult(insult)
+            server = xmlrpc_servers[_ % len(xmlrpc_servers)]  
+            server.store_insult(insult)
         except Exception as e:
             print(f"XML-RPC Send Error: {e}")
-        end_time = time.time()
+    end_time = time.time()
 
-        save_result({
-            "service": "XML-RPC",
-            "operation": "send",
-            "time": end_time - start_time,
-            "timestamp": datetime.now().isoformat()
-        })
 
 def receive_insults_pyro():
     """Cada cliente recibe insultos del servidor Pyro4"""
-    for _ in range(10):
+    for _ in range(100):
         start_time = time.time()
         print("[Pyro4] Insulto aleatorio:", pyro_insult_service.get_random_insult())
         end_time = time.time()
-        #time.sleep(3)
-
-        save_result({
-            "service": "Pyro4",
-            "operation": "receive",
-            "time": end_time - start_time,
-            "timestamp": datetime.now().isoformat()
-        })
-        #time.sleep(3)
+        
 
 
 def receive_insults_xmlrpc():
     """Cada cliente recibe insultos del servidor XML-RPC"""
-    for _ in range(2):
+    for _ in range(1):
         start_time = time.time()
-        print("[XML-RPC] Insulto aleatorio:", xmlrpc_insult_service.get_random_insult())
+        server = xmlrpc_servers[_ % len(xmlrpc_servers)]  # 🔄 Reparte entre los servidores disponibles
+        print("[XML-RPC] Insulto aleatorio:", server.get_random_insult())
         end_time = time.time()
         #time.sleep(3)
 
-        save_result({
-            "service": "XML-RPC",
-            "operation": "receive",
-            "time": end_time - start_time,
-            "timestamp": datetime.now().isoformat()
-        })
-        #time.sleep(3)
 
 if __name__ == "__main__":
     time.sleep(2)
@@ -135,8 +118,18 @@ if __name__ == "__main__":
 
         # Lanzar tareas de envío
         for _ in range(NUM_CLIENTS):
+            start_time_pyro = time.time()
             futures.append(executor.submit(send_insults_pyro))
-            futures.append(executor.submit(send_insults_xmlrpc))
+            futures.append(executor.submit(receive_insults_pyro))
+            end_time_pyro = time.time()
+            
+            save_result({
+                "service": "Pyro4",
+                "operation": "send/receive",
+                "time": end_time_pyro - start_time_pyro,
+                "timestamp": datetime.now().isoformat(),
+                "nodes": num_nodos
+            })
 
         # Esperar a que terminen
         concurrent.futures.wait(futures)
@@ -144,8 +137,18 @@ if __name__ == "__main__":
         # Lanzar tareas de recepción
         futures = []
         for _ in range(NUM_CLIENTS):
-            futures.append(executor.submit(receive_insults_pyro))
+            start_time_xmlrpc = time.time()
+            futures.append(executor.submit(send_insults_xmlrpc))
             futures.append(executor.submit(receive_insults_xmlrpc))
+            end_time_xmlrpc = time.time()
+            save_result({
+                "service": "XML-RPC",
+                "operation": "send/receive",
+                "time": end_time_xmlrpc - start_time_xmlrpc,
+                "timestamp": datetime.now().isoformat(),
+                "nodes": num_nodos
+            })
+        # Esperar a que terminen
 
         concurrent.futures.wait(futures)
 

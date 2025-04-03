@@ -1,59 +1,63 @@
 import json
 import matplotlib.pyplot as plt
 
-# Cargar los datos desde los archivos JSON
-def load_results(file_path):
-    """Carga resultados desde un archivo JSON."""
-    with open(file_path, "r") as file:
-        return json.load(file)
+RESULTS_FILE = "tests/results.json"
+RESULTS_FILE_FILTER = "tests/results_filter.json"
 
-# Obtener tiempos promedios de ejecución para cada número de nodos
-def calculate_avg_times(results):
-    """Calcula tiempos promedios agrupados por número de nodos."""
-    times_per_node = {}
-    
-    for entry in results:
-        num_nodes = entry.get("num_nodes", 1)  # Valor por defecto: 1
-        time = entry.get("time", 0)  # Asegurar que haya un tiempo registrado
+def analyze_speedup(ax, data, title):
+    pyro_times = {}
+    xmlrpc_times = {}
+
+    # Clasificar los datos por tipo de servidor
+    for entry in data:
+        nodes = entry["nodes"]
+        server_type = entry["service"]  
         
-        if num_nodes not in times_per_node:
-            times_per_node[num_nodes] = []
-        times_per_node[num_nodes].append(time)
+        if server_type == "Pyro4":
+            if nodes not in pyro_times:
+                pyro_times[nodes] = []
+            pyro_times[nodes].append(entry["time"])
+        elif server_type == "XML-RPC":
+            if nodes not in xmlrpc_times:
+                xmlrpc_times[nodes] = []
+            xmlrpc_times[nodes].append(entry["time"])
 
-    # Calcular promedios
-    avg_times = {n: sum(times) / len(times) for n, times in times_per_node.items()}
+    avg_pyro_times = {nodes: sum(pyro_times[nodes]) / len(pyro_times[nodes]) for nodes in pyro_times}
+    avg_xmlrpc_times = {nodes: sum(xmlrpc_times[nodes]) / len(xmlrpc_times[nodes]) for nodes in xmlrpc_times}
+
+    if 1 in avg_pyro_times and 1 in avg_xmlrpc_times:
+        base_time_pyro = avg_pyro_times[1]
+        base_time_xmlrpc = avg_xmlrpc_times[1]
+
+        pyro_speedups = {nodes: base_time_pyro / avg_pyro_times[nodes] for nodes in avg_pyro_times}
+        xmlrpc_speedups = {nodes: base_time_xmlrpc / avg_xmlrpc_times[nodes] for nodes in avg_xmlrpc_times}
+
+        # Graficar Pyro4
+        ax.plot(list(pyro_speedups.keys()), list(pyro_speedups.values()), label='Pyro4', marker='o', color='b', linestyle='-', linewidth=2, markersize=8)
+
+        # Graficar XML-RPC
+        ax.plot(list(xmlrpc_speedups.keys()), list(xmlrpc_speedups.values()), label='XML-RPC', marker='s', color='r', linestyle='--', linewidth=2, markersize=8)
+
+        # Etiquetas y título
+        ax.set_xlabel('Número de Nodos', fontsize=12)
+        ax.set_ylabel('Speedup', fontsize=12)
+        ax.set_title(f'Speedup en función del número de nodos ({title})', fontsize=14)
+        ax.legend()
+        ax.grid(True)
+
+if __name__ == "__main__":
+    with open(RESULTS_FILE, "r") as file:
+        data1 = json.load(file)
     
-    return dict(sorted(avg_times.items()))  # Ordenar por número de nodos
+    with open(RESULTS_FILE_FILTER, "r") as file:
+        data2 = json.load(file)
 
-# Cargar archivos JSON
-results_service = load_results("results.json")
-results_filter = load_results("results_filter.json")
+    # Crear una figura con dos subgráficos (1 fila, 2 columnas)
+    fig, axes = plt.subplots(1, 2, figsize=(14, 6))
 
-# Calcular tiempos promedios
-times_service = calculate_avg_times(results_service)
-times_filter = calculate_avg_times(results_filter)
+    analyze_speedup(axes[0], data1, "Insult Service")
+    analyze_speedup(axes[1], data2, "Filter Service")
 
-# Usar tiempos del servicio como referencia para T1
-T1_service = times_service.get(1, None)
-T1_filter = times_filter.get(1, None)
-
-# Evitar errores si no hay datos de un solo nodo
-if T1_service is None or T1_filter is None:
-    raise ValueError("No hay datos para 1 nodo, no se puede calcular el speedup.")
-
-# Calcular speedup para cada número de nodos
-speedup_service = {n: (T1_service / Tn) if Tn > 0 else 0 for n, Tn in times_service.items()}
-speedup_filter = {n: (T1_filter / Tn) if Tn > 0 else 0 for n, Tn in times_filter.items()}
-
-# Graficar Speedup vs. Número de nodos
-plt.figure(figsize=(8, 5))
-plt.plot(speedup_service.keys(), speedup_service.values(), label="InsultService", marker="o", linestyle="-")
-plt.plot(speedup_filter.keys(), speedup_filter.values(), label="InsultFilter", marker="x", linestyle="--")
-
-plt.xlabel("Número de nodos")
-plt.ylabel("Speedup")
-plt.title("Speedup vs. Número de Nodos")
-plt.legend()
-plt.grid(True)
-
-plt.show()
+    # Mostrar la figura completa con ambas gráficas
+    plt.tight_layout()  
+    plt.show()

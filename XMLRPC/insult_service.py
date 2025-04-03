@@ -2,6 +2,33 @@ from xmlrpc.server import SimpleXMLRPCServer
 from xmlrpc.server import SimpleXMLRPCRequestHandler
 import random
 from socketserver import ThreadingMixIn
+import sys
+import json
+import os
+
+SERVER_LIST_FILE = "active_servers.json"
+
+def register_server(port):
+    """Registra el puerto del servidor en el archivo JSON"""
+    if os.path.exists(SERVER_LIST_FILE):
+        with open(SERVER_LIST_FILE, "r") as file:
+            try:
+                servers = json.load(file)
+            except json.JSONDecodeError:
+                servers = []
+    else:
+        servers = []
+
+    if port not in servers:
+        servers.append(port)
+
+    with open(SERVER_LIST_FILE, "w") as file:
+        json.dump(servers, file)
+
+# Antes de iniciar el servidor, regístralo
+port = int(sys.argv[1]) if len(sys.argv) > 1 else 8000 
+register_server(port)
+
 
 # Clase que maneja las solicitudes XML-RPC
 class ThreadedXMLRPCServer(ThreadingMixIn, SimpleXMLRPCServer):
@@ -29,10 +56,11 @@ def get_random_insult():
     return random.choice(insult_list)
 
 # Configurar el servidor XML-RPC
+#port = int(sys.argv[1]) if len(sys.argv) > 1 else 8000
 #server = SimpleXMLRPCServer(("localhost", 8000), requestHandler=RequestHandler, allow_none=True)
-server = ThreadedXMLRPCServer(("localhost", 8000), requestHandler=RequestHandler, allow_none=True)
+server = ThreadedXMLRPCServer(("localhost", port), requestHandler=RequestHandler, allow_none=True)
 
-print("InsultService is running on port 8000...")
+print(f"InsultService is running on port {port}...")
 
 # Registrar funciones en el servidor
 server.register_function(store_insult, "store_insult")

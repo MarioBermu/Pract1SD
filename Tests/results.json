@@ -1,0 +1,44 @@
+[
+    {
+        "service": "Pyro4",
+        "operation": "send/receive",
+        "time": 0.00185394287109375,
+        "timestamp": "2025-04-03T23:31:19.522259",
+        "nodes": 1
+    },
+    {
+        "service": "XML-RPC",
+        "operation": "send/receive",
+        "time": 5.888938903808594e-05,
+        "timestamp": "2025-04-03T23:31:19.702147",
+        "nodes": 1
+    },
+    {
+        "service": "Pyro4",
+        "operation": "send/receive",
+        "time": 0.0007810592651367188,
+        "timestamp": "2025-04-03T23:32:16.076969",
+        "nodes": 2
+    },
+    {
+        "service": "XML-RPC",
+        "operation": "send/receive",
+        "time": 4.601478576660156e-05,
+        "timestamp": "2025-04-03T23:32:16.209511",
+        "nodes": 2
+    },
+    {
+        "service": "Pyro4",
+        "operation": "send/receive",
+        "time": 0.0010619163513183594,
+        "timestamp": "2025-04-03T23:34:49.986679",
+        "nodes": 3
+    },
+    {
+        "service": "XML-RPC",
+        "operation": "send/receive",
+        "time": 3.4809112548828125e-05,
+        "timestamp": "2025-04-03T23:34:50.112602",
+        "nodes": 3
+    }
+]
