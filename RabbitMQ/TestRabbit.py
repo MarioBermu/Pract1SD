@@ -45,6 +45,7 @@ def start_angry_producer(client_id, results):
         # No necesitamos un resultado directo ya que el procesamiento es automático y el conteo debe ser ajustado externamente si es necesario
 
     # Agregar el conteo al resultado global (opcional, depende de cómo desees contar las respuestas)
+    count += 1  # Incrementar el contador por cada ejecución
     results.append(count)
 
 def run_test():
