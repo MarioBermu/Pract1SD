@@ -10,10 +10,7 @@ result_queue = "RESULT_QUEUE"
 # Lista de textos con insultos
 texts = [
     "Eres más torpe que un burro con patines, de verdad, cada cosa que haces demuestra lo zoquete que eres.",
-    "Menso como siempre, te las das de listo pero no logras hacer nada bien. Es increíble cómo puedes ser tan cabezón y necio.",
-    "Si la estupidez fuera un arte, tú serías el maestro supremo. No hay nadie más zoquete, torpe y desesperante que tú.",
-    "Nunca había visto a alguien tan patán en mi vida, es que no das una. Eres el claro ejemplo de por qué algunas personas simplemente no deberían intentar pensar.",
-    "Cada vez que hablas, se me confirma que eres un idiota sin solución. No importa cuánto intentes parecer inteligente, sigues siendo un pedazo de inútil."
+
 ]
 
 # Enviar los 5 textos al filtro

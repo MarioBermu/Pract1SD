@@ -6,17 +6,29 @@ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.ticker import FuncFormatter
 import insult_client
+import AngryProducer
 
 
 # Parámetros de prueba
 NUM_SERVERS_LIST = [1, 2, 3]
 NUM_CLIENTS = 10
 NUM_MESSAGES = 10
+NUM_MESSAGES_FILTER = 2
 RESULTS_FILE = "results.json"
+RESULTS_FILE_FILTER = "results_filter.json"
 
+def start_filter():
+    return subprocess.Popen(["python", "Insultfilter.py"])
 
 def start_server():
-    return subprocess.Popen(["python", "insult_service.py"])
+    return subprocess.Popen(["python", "insult_service.py"]) 
+
+def start_AngryProducer():
+    for _ in range(NUM_MESSAGES_FILTER):
+        text = "Hola Menso, ¿cómo estás?"
+        AngryProducer.send_text(text)
+        AngryProducer.get_texts()
+        
 
 def start_client(client_id):
     for _ in range(NUM_MESSAGES):
@@ -26,6 +38,7 @@ def start_client(client_id):
 
 def run_test():
     all_results = {}
+    
     baseline_time = None
 
     for num_servers in NUM_SERVERS_LIST:
@@ -58,18 +71,66 @@ def run_test():
 
     with open(RESULTS_FILE, "w") as f:
         json.dump(all_results, f)
+    all_results = {}
+    
+    baseline_time = None
 
     print("Test completado.")
 
+def run_test_filter():
+    all_results = {}
+    baseline_time = None
+
+    for num_servers in NUM_SERVERS_LIST:
+        print(f"Probando con {num_servers} filtros...")
+
+        servers = [start_filter() for _ in range(num_servers)]
+        time.sleep(2)
+
+        start_time = time.time()
+
+        clients = []
+        for i in range(NUM_CLIENTS):
+            p = multiprocessing.Process(target=start_AngryProducer)
+            clients.append(p)
+            p.start()
+
+        for c in clients:
+            c.join()
+
+        end_time = time.time()
+        total_time = end_time - start_time
+
+        for s in servers:
+            s.terminate()
+
+        if num_servers == 1:
+            baseline_time = total_time
+
+        all_results[num_servers] = baseline_time / total_time  # Speedup
+
+    with open(RESULTS_FILE_FILTER, "w") as f:
+        json.dump(all_results, f)
+
+    print("Test completado.")
+
+
 def plot_results():
+    
     with open(RESULTS_FILE, "r") as f:
         results = json.load(f)
 
+    with open(RESULTS_FILE_FILTER, "r") as f:
+        results_filter = json.load(f)
+
+    speedupsfilter = [results_filter[str(s)] for s in NUM_SERVERS_LIST]
     servers = sorted(map(int, results.keys()))
     speedups = [results[str(s)] for s in servers]
 
     plt.figure(figsize=(10, 5))
     plt.plot(servers, speedups, marker='o', linestyle='-', color='red')
+
+    plt.plot(servers, speedupsfilter, marker='o', linestyle='-', color='blue')
     plt.xticks(servers)
     plt.xlabel("Número de Servidores")
     plt.ylabel("Speedup")
@@ -82,4 +143,5 @@ def plot_results():
 
 if __name__ == "__main__":
     run_test()
+    run_test_filter()
     plot_results()
