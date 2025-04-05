@@ -12,6 +12,9 @@ num_nodos = int(sys.argv[1])
 
 available_ports = [8000, 8001, 8002, 8003, 8004, 8005, 8006]
 
+service_ports = available_ports[:len(available_ports)//2]
+filter_ports = available_ports[len(available_ports)//2:]
+
 # Servidores a ejecutar
 base_servers = [
     ["python3", "../Pyro/insultService.py"],
@@ -23,14 +26,19 @@ base_servers = [
 # Crear múltiples instancias según num_nodos
 servers = []
 port_index = 0
+
+service_port_index = 0
+filter_port_index = 0
+
 for i in range(num_nodos):
     for server in base_servers:
-        if "{port}" in server:
-            if port_index >= len(available_ports):
-                print("⚠️ No hay suficientes puertos disponibles. Reduce el número de nodos.")
-                sys.exit(1)
-            assigned_port = available_ports[port_index]
-            port_index += 1
+        if "insult_service.py" in server[1] and "{port}" in server:
+            assigned_port = service_ports[service_port_index]
+            service_port_index += 1
+            servers.append([arg.replace("{port}", str(assigned_port)) for arg in server])
+        elif "insult_service_filter.py" in server[1] and "{port}" in server:
+            assigned_port = filter_ports[filter_port_index]
+            filter_port_index += 1
             servers.append([arg.replace("{port}", str(assigned_port)) for arg in server])
         else:
             servers.append(server)

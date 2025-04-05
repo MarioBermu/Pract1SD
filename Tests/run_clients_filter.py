@@ -75,14 +75,13 @@ def send_texts_pyro():
 
 def send_texts_xmlrpc():
     """Cada cliente envía 5 textos al servidor XML-RPC"""
-    for text in texts:
-        #start_time = time.time()
+
+    for i, text in enumerate(texts):
         try:
-            server = xmlrpc_servers[_ % len(xmlrpc_servers)]  
+            server = xmlrpc_servers[i % len(xmlrpc_servers)]
             filtered_text = server.filter_text(text)
         except Exception as e:
             print(f"XML-RPC Send Error: {e}")
-        #end_time = time.time()
 
 
 def receive_texts_pyro():
@@ -98,13 +97,14 @@ def receive_texts_pyro():
 
 def receive_texts_xmlrpc():
     """Cada cliente recibe lista de textos del servidor XML-RPC"""
-    server = xmlrpc_servers[_ % len(xmlrpc_servers)]  
-    filtered_texts = server.get_filtered_texts()
-    print("\nLista de textos filtrados almacenados:")
-    for t in filtered_texts:
-        start_time = time.time()
-        print("[XML-RPC] Texto filtrado:", t)
-        end_time = time.time()
+    for i in range(len(xmlrpc_servers)):
+        try:
+            server = xmlrpc_servers[i]
+            filtered_texts = server.get_filtered_texts()
+            for t in filtered_texts:
+                print("[XML-RPC] Texto filtrado:", t)
+        except Exception as e:
+            print(f"XML-RPC Receive Error: {e}")
 
        
 
