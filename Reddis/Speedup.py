@@ -86,11 +86,12 @@ for count in server_counts:
 import matplotlib.pyplot as plt
 
 plt.figure(figsize=(10, 5))
-plt.plot(server_counts, results_filter, marker='+', color='red')
-plt.plot(server_counts, results, marker='o', color='blue')
+plt.plot(server_counts, results, marker='o', label='Servicio de Insultos', color='blue')
+plt.plot(server_counts, results_filter, marker='*', label='Servicio de Filtro', color='red')
 plt.xticks(server_counts)
-plt.title('Speedup comparativo con Redis')
+plt.title('Comparación de Speedup por Número de Servidores')
 plt.xlabel('Número de Servidores')
 plt.ylabel('Speedup')
+plt.legend(title="Leyenda", title_fontsize='13', fontsize='11')
 plt.grid(True)
 plt.show()
