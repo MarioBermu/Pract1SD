@@ -16,6 +16,7 @@ def send_text(text):
     data = {"action": "send_text", "text": text}
     channel.basic_publish(exchange='', routing_key=queue_receive, body=json.dumps(data))
     connection.close()
+    
 
 def get_texts():
     connection, channel = connect()
@@ -26,7 +27,7 @@ def get_texts():
         method_frame, header_frame, body = channel.basic_get(queue=queue_send, auto_ack=True)
         if body:
             response = json.loads(body.decode())
-        time.sleep(0.01)
+        time.sleep(0.1)
     connection.close()
     return response.get("texts", [])
 

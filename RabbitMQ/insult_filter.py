@@ -27,6 +27,7 @@ def callback(ch, method, properties, body):
     if action == "send_text":
         text = data.get("text")
         censor_text(text)
+        response = json.dumps({"status": "Text processed"})
 
     elif action == "get_texts":
         texts = [redis_client.lindex("RESULTS", i).decode('utf-8') for i in range(redis_client.llen("RESULTS"))]

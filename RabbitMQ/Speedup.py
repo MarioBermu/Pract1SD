@@ -6,14 +6,14 @@ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.ticker import FuncFormatter
 import insult_client
-import Pract1SD.RabbitMQ.insult_filter_client as insult_filter_client
+import insult_filter_client
 
 
 # Parámetros de prueba
 NUM_SERVERS_LIST = [1, 2, 3]
 NUM_CLIENTS = 10
 NUM_MESSAGES = 10
-NUM_MESSAGES_FILTER = 2
+NUM_MESSAGES_FILTER = 10
 RESULTS_FILE = "results.json"
 RESULTS_FILE_FILTER = "results_filter.json"
 
@@ -27,7 +27,8 @@ def start_AngryProducer():
     for _ in range(NUM_MESSAGES_FILTER):
         text = "Hola Menso, ¿cómo estás?"
         insult_filter_client.send_text(text)
-        insult_filter_client.get_texts()
+        time.sleep(0.2)  # Esperar un poco entre envíos para simular carga
+        
         
 
 def start_client(client_id):
@@ -128,9 +129,9 @@ def plot_results():
     speedups = [results[str(s)] for s in servers]
 
     plt.figure(figsize=(10, 5))
-    plt.plot(servers, speedups, marker='o', linestyle='-', color='red')
-
-    plt.plot(servers, speedupsfilter, marker='o', linestyle='-', color='blue')
+    plt.plot(servers, speedups, marker='o', linestyle='-',label='Servicio de Insultos', color='red')
+    plt.plot(servers, speedupsfilter, marker='o', linestyle='-',label='Servicio de Filtro', color='blue')
+    plt.legend(title="Leyenda", title_fontsize='13', fontsize='11')
     plt.xticks(servers)
     plt.xlabel("Número de Servidores")
     plt.ylabel("Speedup")
