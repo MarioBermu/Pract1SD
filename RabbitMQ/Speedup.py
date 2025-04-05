@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.ticker import FuncFormatter
 import insult_client
-import AngryProducer
+import Pract1SD.RabbitMQ.insult_filter_client as insult_filter_client
 
 
 # Parámetros de prueba
@@ -18,7 +18,7 @@ RESULTS_FILE = "results.json"
 RESULTS_FILE_FILTER = "results_filter.json"
 
 def start_filter():
-    return subprocess.Popen(["python", "Insultfilter.py"])
+    return subprocess.Popen(["python", "insult_filter.py"])
 
 def start_server():
     return subprocess.Popen(["python", "insult_service.py"]) 
@@ -26,8 +26,8 @@ def start_server():
 def start_AngryProducer():
     for _ in range(NUM_MESSAGES_FILTER):
         text = "Hola Menso, ¿cómo estás?"
-        AngryProducer.send_text(text)
-        AngryProducer.get_texts()
+        insult_filter_client.send_text(text)
+        insult_filter_client.get_texts()
         
 
 def start_client(client_id):
