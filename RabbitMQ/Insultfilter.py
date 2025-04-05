@@ -2,6 +2,9 @@ import pika
 import json
 import redis
 
+REDIS_KEY = "filter_processed_count"
+
+
 rabbitmq_host = 'localhost'
 queue_receive = 'text_receive_queue'
 queue_send = 'text_send_queue'
@@ -14,6 +17,7 @@ def censor_text(text):
         text = text.replace(insult, "CENSORED")
     redis_client.rpush("RESULTS", text)  # Almacenar el texto procesado en Redis
     print(f"Processed text: {text}")
+    redis_client.incr(REDIS_KEY)
     return text
 
 def callback(ch, method, properties, body):

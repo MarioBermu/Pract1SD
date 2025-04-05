@@ -1,6 +1,10 @@
 import pika
 import random
 import json
+import redis
+redis_client = redis.Redis(host='localhost', port=6379, db=0)
+REDIS_KEY = "insult_processed_count"
+
 
 rabbitmq_host = 'localhost'
 queue_receive = 'insult_receive_queue'
@@ -20,6 +24,7 @@ def callback(ch, method, properties, body):
             print(f"Stored new insult: {insult}")
         else:
             print(f"Duplicate insult ignored: {insult}")
+         
 
     elif action == "get_insult":
         if insult_list:
@@ -30,12 +35,14 @@ def callback(ch, method, properties, body):
         response = json.dumps({"insult": insult})
         ch.basic_publish(exchange='', routing_key=queue_send, body=response)
         print(f"Sent insult: {insult}")
+      
 
     elif action == "get_insult_list":
         response = json.dumps({"insults": insult_list})
         ch.basic_publish(exchange='', routing_key=queue_send, body=response)
         print("Sent full insult list")
-
+    
+    redis_client.incr(REDIS_KEY)
     ch.basic_ack(delivery_tag=method.delivery_tag)
 
 # Conectar a RabbitMQ

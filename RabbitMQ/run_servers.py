@@ -1,123 +1,95 @@
 import subprocess
-import multiprocessing
 import time
 import math
 import pika
 import json
+import redis
 from datetime import datetime
 
-# Configuración
 rabbitmq_host = 'localhost'
-insult_receive_queue = 'insult_receive_queue'
-text_receive_queue = 'text_receive_queue'
+MAX_WORKERS = 10
+INTERVAL = 1  # segundos
+METRICS_FILENAME = f"scaling_metrics_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
 
-T_r = 1.0  # Tiempo de respuesta objetivo
-C = 1      # Capacidad de procesamiento (mensajes por segundo)
-
-# Historial de procesos lanzados
 insult_procs = []
 filter_procs = []
 
-# Funciones para lanzar workers
+redis_client = redis.Redis(host='localhost', port=6379, db=0)
+INSULT_KEY = "insult_processed_count"
+FILTER_KEY = "filter_processed_count"
+
 def worker_insult():
-    subprocess.Popen(["python3", "insult_service.py"])
+    return subprocess.Popen(["python3", "insult_service.py"])
 
 def worker_filter():
-    subprocess.Popen(["python3", "insultfilter.py"])
+    return subprocess.Popen(["python3", "insultfilter.py"])
 
-# Obtener backlog de una cola
-def get_backlog(queue_name):
-    try:
-        connection = pika.BlockingConnection(pika.ConnectionParameters(host=rabbitmq_host))
-        channel = connection.channel()
-        queue = channel.queue_declare(queue=queue_name, passive=True)
-        message_count = queue.method.message_count
-        connection.close()
-        return message_count
-    except Exception as e:
-        print(f"Error getting backlog for {queue_name}: {e}")
-        return 0
+# Calcular T al arrancar
+def measure_T():
+    print("⚠️ Midiendo T ficticio (fijo = 0.5s por mensaje)")
+    return 0.5, 2  # T=0.5s → C=2 msg/s
 
-# Escalado dinámico y recolección de métricas
-def dynamic_scaling_loop(duration_seconds=60):
-    start_time = time.time()
+def dynamic_scaling_loop(T_insult, C_insult, T_filter, C_filter):
+    print("🚀 Iniciando escalado dinámico basado en tráfico real...")
     metrics = []
 
-    while time.time() - start_time < duration_seconds:
-        timestamp = round(time.time() - start_time, 2)
+    last_insult_total = int(redis_client.get(INSULT_KEY) or 0)
+    last_filter_total = int(redis_client.get(FILTER_KEY) or 0)
 
-        # InsultService
-        B_insult = get_backlog(insult_receive_queue)
-        λ_insult = B_insult / T_r
-        N_insult = math.ceil((B_insult + λ_insult * T_r) / C)
+    while True:
+        time.sleep(INTERVAL)
+
+        insult_total = int(redis_client.get(INSULT_KEY) or 0)
+        filter_total = int(redis_client.get(FILTER_KEY) or 0)
+
+        λ_insult = max(0, insult_total - last_insult_total) / INTERVAL
+        λ_filter = max(0, filter_total - last_filter_total) / INTERVAL
+
+        last_insult_total = insult_total
+        last_filter_total = filter_total
+
+        N_insult = min(MAX_WORKERS, math.ceil((λ_insult * T_insult) / C_insult))
+        N_filter = min(MAX_WORKERS, math.ceil((λ_filter * T_filter) / C_filter))
+
         delta_insult = N_insult - len(insult_procs)
-
         if delta_insult > 0:
             for _ in range(delta_insult):
-                worker_insult()
-                insult_procs.append("worker")
+                insult_procs.append(worker_insult())
         elif delta_insult < 0:
             for _ in range(-delta_insult):
-                insult_procs.pop()
+                proc = insult_procs.pop()
+                if proc.poll() is None:
+                    proc.terminate()
 
-        # FilterService
-        B_filter = get_backlog(text_receive_queue)
-        λ_filter = B_filter / T_r
-        N_filter = math.ceil((B_filter + λ_filter * T_r) / C)
         delta_filter = N_filter - len(filter_procs)
-
         if delta_filter > 0:
             for _ in range(delta_filter):
-                worker_filter()
-                filter_procs.append("worker")
+                filter_procs.append(worker_filter())
         elif delta_filter < 0:
             for _ in range(-delta_filter):
-                filter_procs.pop()
+                proc = filter_procs.pop()
+                if proc.poll() is None:
+                    proc.terminate()
 
-        print(f"[{timestamp}s] insult_workers={len(insult_procs)} filter_workers={len(filter_procs)}")
-        print(f"    Backlogs -> insult={B_insult} | filter={B_filter}")
+        print(f"[{time.strftime('%H:%M:%S')}] λ_insult={λ_insult:.2f} | λ_filter={λ_filter:.2f} → Workers: {len(insult_procs)} / {len(filter_procs)}")
 
         metrics.append({
-            "time": timestamp,
+            "time": round(time.time(), 2),
             "insult_workers": len(insult_procs),
             "filter_workers": len(filter_procs),
-            "insult_backlog": B_insult,
-            "filter_backlog": B_filter
+            "lambda_insult": λ_insult,
+            "lambda_filter": λ_filter
         })
 
-        time.sleep(2)
+        with open(METRICS_FILENAME, 'w') as f:
+            json.dump(metrics, f, indent=4)
 
-    # Guardar en JSON
-    filename = f"scaling_metrics_{datetime.now().strftime('%Y%m%d_%H%M%S')}.json"
-    with open(filename, 'w') as f:
-        json.dump(metrics, f, indent=4)
+def reset_redis_counters():
+    redis_client.set(INSULT_KEY, 0)
+    redis_client.set(FILTER_KEY, 0)
 
-    print(f"\n📊 Métricas guardadas en: {filename}")
-
-# Esperar a que se creen las colas
-def wait_for_queues(timeout=10):
-    print("⏳ Esperando a que se creen las colas en RabbitMQ...")
-    start = time.time()
-    while time.time() - start < timeout:
-        try:
-            connection = pika.BlockingConnection(pika.ConnectionParameters(host=rabbitmq_host))
-            channel = connection.channel()
-            channel.queue_declare(queue=insult_receive_queue, passive=True)
-            channel.queue_declare(queue=text_receive_queue, passive=True)
-            connection.close()
-            print("✅ Colas encontradas. Iniciando escalado dinámico.")
-            return True
-        except:
-            time.sleep(1)
-    print("❌ No se detectaron las colas a tiempo. ¿Están corriendo los servicios?")
-    return False
-
-# Ejecución principal
 if __name__ == "__main__":
-    worker_insult()
-    worker_filter()
-
-    if wait_for_queues(timeout=15):
-        dynamic_scaling_loop(duration_seconds=60)
-    else:
-        print("⛔ Abortando ejecución.")
+    reset_redis_counters()
+    T_insult, C_insult = measure_T()
+    T_filter, C_filter = measure_T()
+    dynamic_scaling_loop(T_insult, C_insult, T_filter, C_filter)
