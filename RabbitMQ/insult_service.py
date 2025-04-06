@@ -23,9 +23,9 @@ def callback(ch, method, properties, body):
             insult_list.append(insult)
             print(f"Stored new insult: {insult}")
             redis_client.incr(REDIS_KEY)
-        #else:
-            #print(f"Duplicate insult ignored: {insult}")
-            #redis_client.incr(REDIS_KEY)
+        else:
+            print(f"Duplicate insult ignored: {insult}")
+            redis_client.incr(REDIS_KEY)
          
 
     elif action == "get_insult":
