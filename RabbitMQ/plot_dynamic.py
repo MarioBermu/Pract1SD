@@ -18,14 +18,25 @@ with open(latest_json, 'r') as f:
 
 df = pd.DataFrame(data)
 
-# Crear eje X como número de iteración (0, 1, 2, ...)
-df["iteration"] = range(len(df))
+# Convertir la columna 'time' (timestamp UNIX) a datetime
+df["time"] = pd.to_datetime(df["time"], unit='s')
+df.set_index("time", inplace=True)
 
-# Graficar número de workers
-plt.figure(figsize=(10, 6))
-plt.plot(df["iteration"], df["insult_workers"], label="InsultService Workers")
-plt.plot(df["iteration"], df["filter_workers"], label="FilterService Workers")
-plt.xlabel("Iteración")
+# Forzar columnas numéricas por si acaso
+cols_to_convert = [
+    "insult_workers", "filter_workers",
+    "lambda_insult", "lambda_filter",
+    "queue_insult_backlog", "queue_filter_backlog"
+]
+for col in cols_to_convert:
+    if col in df.columns:
+        df[col] = pd.to_numeric(df[col], errors='coerce').fillna(0)
+
+# === GRÁFICO 1: Número de Workers ===
+plt.figure(figsize=(12, 6))
+plt.plot(df.index, df["insult_workers"], label="InsultService Workers", linewidth=2)
+plt.plot(df.index, df["filter_workers"], label="FilterService Workers", linewidth=2)
+plt.xlabel("Tiempo")
 plt.ylabel("Número de Workers")
 plt.title("Escalado Dinámico: Workers a lo largo del tiempo")
 plt.legend()
@@ -33,24 +44,24 @@ plt.grid(True)
 plt.tight_layout()
 plt.show()
 
-# Graficar tasas de llegada (lambda)
-plt.figure(figsize=(10, 6))
-plt.plot(df["iteration"], df["lambda_insult"], label="λ InsultService")
-plt.plot(df["iteration"], df["lambda_filter"], label="λ FilterService")
-plt.xlabel("Iteración")
+# === GRÁFICO 2: Tasas de llegada (λ) ===
+plt.figure(figsize=(12, 6))
+plt.plot(df.index, df["lambda_insult"], label="λ InsultService", linewidth=2)
+plt.plot(df.index, df["lambda_filter"], label="λ FilterService", linewidth=2)
+plt.xlabel("Tiempo")
 plt.ylabel("Tasa de llegada (mensajes/s)")
-plt.title("Tasa de llegada de mensajes (λ) a lo largo del tiempo")
+plt.title("Tasa de llegada de mensajes a lo largo del tiempo")
 plt.legend()
 plt.grid(True)
 plt.tight_layout()
 plt.show()
 
-# Graficar backlog de colas (si existe)
+# === GRÁFICO 3: Backlog de colas (si existe) ===
 if "queue_insult_backlog" in df.columns and "queue_filter_backlog" in df.columns:
-    plt.figure(figsize=(10, 6))
-    plt.plot(df["iteration"], df["queue_insult_backlog"], label="Backlog Insult Queue")
-    plt.plot(df["iteration"], df["queue_filter_backlog"], label="Backlog Filter Queue")
-    plt.xlabel("Iteración")
+    plt.figure(figsize=(12, 6))
+    plt.plot(df.index, df["queue_insult_backlog"], label="Backlog Insult Queue", linewidth=2)
+    plt.plot(df.index, df["queue_filter_backlog"], label="Backlog Filter Queue", linewidth=2)
+    plt.xlabel("Tiempo")
     plt.ylabel("Mensajes pendientes en cola")
     plt.title("Backlog en RabbitMQ a lo largo del tiempo")
     plt.legend()
@@ -58,4 +69,4 @@ if "queue_insult_backlog" in df.columns and "queue_filter_backlog" in df.columns
     plt.tight_layout()
     plt.show()
 else:
-    print("⚠️ Las columnas de backlog no están presentes en el JSON.")
+    print("⚠️ No se encontraron columnas de backlog en el JSON.")
