@@ -1,7 +1,6 @@
 import subprocess
 import time
 import math
-import pika
 import json
 import redis
 from datetime import datetime
@@ -22,9 +21,8 @@ def worker_insult():
     return subprocess.Popen(["python3", "insult_service.py"])
 
 def worker_filter():
-    return subprocess.Popen(["python3", "insultfilter.py"])
+    return subprocess.Popen(["python3", "insult_filter.py"])
 
-# Calcular T al arrancar
 def measure_T():
     print("⚠️ Midiendo T ficticio (fijo = 0.5s por mensaje)")
     return 0.5, 2  # T=0.5s → C=2 msg/s
@@ -51,22 +49,23 @@ def dynamic_scaling_loop(T_insult, C_insult, T_filter, C_filter):
         N_insult = min(MAX_WORKERS, math.ceil((λ_insult * T_insult) / C_insult))
         N_filter = min(MAX_WORKERS, math.ceil((λ_filter * T_filter) / C_filter))
 
+        # Escalado progresivo (máx 2 workers por segundo)
         delta_insult = N_insult - len(insult_procs)
         if delta_insult > 0:
-            for _ in range(delta_insult):
+            for _ in range(min(delta_insult, 2)):
                 insult_procs.append(worker_insult())
         elif delta_insult < 0:
-            for _ in range(-delta_insult):
+            for _ in range(min(-delta_insult, 2)):
                 proc = insult_procs.pop()
                 if proc.poll() is None:
                     proc.terminate()
 
         delta_filter = N_filter - len(filter_procs)
         if delta_filter > 0:
-            for _ in range(delta_filter):
+            for _ in range(min(delta_filter, 2)):
                 filter_procs.append(worker_filter())
         elif delta_filter < 0:
-            for _ in range(-delta_filter):
+            for _ in range(min(-delta_filter, 2)):
                 proc = filter_procs.pop()
                 if proc.poll() is None:
                     proc.terminate()
@@ -90,6 +89,12 @@ def reset_redis_counters():
 
 if __name__ == "__main__":
     reset_redis_counters()
+    time.sleep(1)
     T_insult, C_insult = measure_T()
     T_filter, C_filter = measure_T()
+
+    # ⚠️ Lanzar 1 worker para que puedan empezar a procesar mensajes y subir el λ
+    insult_procs.append(worker_insult())
+    filter_procs.append(worker_filter())
+
     dynamic_scaling_loop(T_insult, C_insult, T_filter, C_filter)

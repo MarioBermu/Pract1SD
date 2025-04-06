@@ -35,6 +35,7 @@ def callback(ch, method, properties, body):
         ch.basic_publish(exchange='', routing_key=queue_send, body=response)
         print("Sent list of stored texts")
 
+    redis_client.incr(REDIS_KEY)
     ch.basic_ack(delivery_tag=method.delivery_tag)
 
 connection = pika.BlockingConnection(pika.ConnectionParameters(host=rabbitmq_host))

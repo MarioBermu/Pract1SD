@@ -22,8 +22,10 @@ def callback(ch, method, properties, body):
         if insult and insult not in insult_list:
             insult_list.append(insult)
             print(f"Stored new insult: {insult}")
-        else:
-            print(f"Duplicate insult ignored: {insult}")
+            redis_client.incr(REDIS_KEY)
+        #else:
+            #print(f"Duplicate insult ignored: {insult}")
+            #redis_client.incr(REDIS_KEY)
          
 
     elif action == "get_insult":
@@ -42,15 +44,15 @@ def callback(ch, method, properties, body):
         ch.basic_publish(exchange='', routing_key=queue_send, body=response)
         print("Sent full insult list")
     
-    redis_client.incr(REDIS_KEY)
+    #redis_client.incr(REDIS_KEY)
     ch.basic_ack(delivery_tag=method.delivery_tag)
 
 # Conectar a RabbitMQ
 connection = pika.BlockingConnection(pika.ConnectionParameters(host=rabbitmq_host))
 channel = connection.channel()
 
-channel.queue_delete(queue=queue_receive)
-channel.queue_delete(queue=queue_send)
+#channel.queue_delete(queue=queue_receive)
+#channel.queue_delete(queue=queue_send)
 
 channel.queue_declare(queue=queue_receive)
 channel.queue_declare(queue=queue_send)
