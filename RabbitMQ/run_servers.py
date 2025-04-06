@@ -3,6 +3,7 @@ import time
 import math
 import json
 import redis
+import pika
 from datetime import datetime
 
 rabbitmq_host = 'localhost'
@@ -27,8 +28,20 @@ def measure_T():
     print("⚠️ Midiendo T ficticio (fijo = 0.5s por mensaje)")
     return 0.5, 2  # T=0.5s → C=2 msg/s
 
+def get_queue_size(queue_name):
+    try:
+        connection = pika.BlockingConnection(pika.ConnectionParameters(host=rabbitmq_host))
+        channel = connection.channel()
+        queue = channel.queue_declare(queue=queue_name, passive=True)
+        message_count = queue.method.message_count
+        connection.close()
+        return message_count
+    except Exception as e:
+        print(f"❌ Error al consultar tamaño de cola {queue_name}: {e}")
+        return 0
+
 def dynamic_scaling_loop(T_insult, C_insult, T_filter, C_filter):
-    print("🚀 Iniciando escalado dinámico basado en tráfico real...")
+    print("🚀 Iniciando escalado dinámico basado en tráfico real y backlog...")
     metrics = []
 
     last_insult_total = int(redis_client.get(INSULT_KEY) or 0)
@@ -46,10 +59,23 @@ def dynamic_scaling_loop(T_insult, C_insult, T_filter, C_filter):
         last_insult_total = insult_total
         last_filter_total = filter_total
 
-        N_insult = min(1, MAX_WORKERS, math.ceil((λ_insult * T_insult) / C_insult))
-        N_filter = min(1, MAX_WORKERS, math.ceil((λ_filter * T_filter) / C_filter))
+        queue_insult_pending = get_queue_size("insult_receive_queue")
+        queue_filter_pending = get_queue_size("text_receive_queue")
 
-        # Escalado progresivo (máx 2 workers por segundo)
+        # Escalado por tasa λ
+        N_insult = math.ceil((λ_insult * T_insult) / C_insult)
+        N_filter = math.ceil((λ_filter * T_filter) / C_filter)
+
+        # Escalado agresivo si hay backlog
+        if queue_insult_pending > 1000:
+            N_insult = MAX_WORKERS
+        if queue_filter_pending > 1000:
+            N_filter = MAX_WORKERS
+
+        # Nunca bajar de 1 worker
+        N_insult = max(1, min(MAX_WORKERS, N_insult))
+        N_filter = max(1, min(MAX_WORKERS, N_filter))
+
         delta_insult = N_insult - len(insult_procs)
         if delta_insult > 0:
             for _ in range(min(delta_insult, 2)):
@@ -70,14 +96,18 @@ def dynamic_scaling_loop(T_insult, C_insult, T_filter, C_filter):
                 if proc.poll() is None:
                     proc.terminate()
 
-        print(f"[{time.strftime('%H:%M:%S')}] λ_insult={λ_insult:.2f} | λ_filter={λ_filter:.2f} → Workers: {len(insult_procs)} / {len(filter_procs)}")
+        print(f"[{time.strftime('%H:%M:%S')}] λ_insult={λ_insult:.2f} | λ_filter={λ_filter:.2f} | "
+              f"Backlog: insult={queue_insult_pending} filter={queue_filter_pending} → "
+              f"Workers: {len(insult_procs)} / {len(filter_procs)}")
 
         metrics.append({
             "time": round(time.time(), 2),
             "insult_workers": len(insult_procs),
             "filter_workers": len(filter_procs),
             "lambda_insult": λ_insult,
-            "lambda_filter": λ_filter
+            "lambda_filter": λ_filter,
+            "queue_insult_backlog": queue_insult_pending,
+            "queue_filter_backlog": queue_filter_pending
         })
 
         with open(METRICS_FILENAME, 'w') as f:
@@ -93,7 +123,7 @@ if __name__ == "__main__":
     T_insult, C_insult = measure_T()
     T_filter, C_filter = measure_T()
 
-    # ⚠️ Lanzar 1 worker para que puedan empezar a procesar mensajes y subir el λ
+    # ⚙️ Lanzar 1 worker de cada tipo para arrancar
     insult_procs.append(worker_insult())
     filter_procs.append(worker_filter())
 
