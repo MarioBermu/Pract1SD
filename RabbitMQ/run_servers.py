@@ -46,8 +46,8 @@ def dynamic_scaling_loop(T_insult, C_insult, T_filter, C_filter):
         last_insult_total = insult_total
         last_filter_total = filter_total
 
-        N_insult = min(MAX_WORKERS, math.ceil((λ_insult * T_insult) / C_insult))
-        N_filter = min(MAX_WORKERS, math.ceil((λ_filter * T_filter) / C_filter))
+        N_insult = min(1, MAX_WORKERS, math.ceil((λ_insult * T_insult) / C_insult))
+        N_filter = min(1, MAX_WORKERS, math.ceil((λ_filter * T_filter) / C_filter))
 
         # Escalado progresivo (máx 2 workers por segundo)
         delta_insult = N_insult - len(insult_procs)

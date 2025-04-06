@@ -1,0 +1,2214 @@
+[
+    {
+        "time": 1743936443.27,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 21.0,
+        "lambda_filter": 6.0
+    },
+    {
+        "time": 1743936444.32,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 43.0,
+        "lambda_filter": 48.0
+    },
+    {
+        "time": 1743936445.51,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 4.0,
+        "lambda_filter": 10.0
+    },
+    {
+        "time": 1743936446.68,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 44.0,
+        "lambda_filter": 32.0
+    },
+    {
+        "time": 1743936447.73,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 8.0,
+        "lambda_filter": 114.0
+    },
+    {
+        "time": 1743936448.77,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 66.0,
+        "lambda_filter": 159.0
+    },
+    {
+        "time": 1743936449.78,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 7.0,
+        "lambda_filter": 119.0
+    },
+    {
+        "time": 1743936450.81,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 7.0,
+        "lambda_filter": 105.0
+    },
+    {
+        "time": 1743936451.86,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 90.0,
+        "lambda_filter": 103.0
+    },
+    {
+        "time": 1743936452.87,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 64.0,
+        "lambda_filter": 204.0
+    },
+    {
+        "time": 1743936453.94,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 56.0,
+        "lambda_filter": 194.0
+    },
+    {
+        "time": 1743936454.96,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 220.0,
+        "lambda_filter": 172.0
+    },
+    {
+        "time": 1743936455.97,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 231.0,
+        "lambda_filter": 182.0
+    },
+    {
+        "time": 1743936456.98,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 250.0,
+        "lambda_filter": 206.0
+    },
+    {
+        "time": 1743936458.02,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 224.0,
+        "lambda_filter": 188.0
+    },
+    {
+        "time": 1743936459.03,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 225.0,
+        "lambda_filter": 190.0
+    },
+    {
+        "time": 1743936460.07,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 304.0,
+        "lambda_filter": 262.0
+    },
+    {
+        "time": 1743936461.08,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 93.0,
+        "lambda_filter": 70.0
+    },
+    {
+        "time": 1743936462.11,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 221.0,
+        "lambda_filter": 184.0
+    },
+    {
+        "time": 1743936463.17,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 235.0,
+        "lambda_filter": 186.0
+    },
+    {
+        "time": 1743936464.18,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 80.0,
+        "lambda_filter": 58.0
+    },
+    {
+        "time": 1743936465.21,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 221.0,
+        "lambda_filter": 186.0
+    },
+    {
+        "time": 1743936466.23,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 148.0,
+        "lambda_filter": 125.0
+    },
+    {
+        "time": 1743936467.26,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 77.0,
+        "lambda_filter": 59.0
+    },
+    {
+        "time": 1743936468.28,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 294.0,
+        "lambda_filter": 243.0
+    },
+    {
+        "time": 1743936469.31,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 238.0,
+        "lambda_filter": 193.0
+    },
+    {
+        "time": 1743936470.32,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 343.0,
+        "lambda_filter": 300.0
+    },
+    {
+        "time": 1743936471.33,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 251.0,
+        "lambda_filter": 219.0
+    },
+    {
+        "time": 1743936472.38,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 167.0,
+        "lambda_filter": 129.0
+    },
+    {
+        "time": 1743936473.46,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 121.0,
+        "lambda_filter": 84.0
+    },
+    {
+        "time": 1743936474.47,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 187.0,
+        "lambda_filter": 140.0
+    },
+    {
+        "time": 1743936475.48,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 182.0,
+        "lambda_filter": 149.0
+    },
+    {
+        "time": 1743936476.51,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 248.0,
+        "lambda_filter": 215.0
+    },
+    {
+        "time": 1743936477.52,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 224.0,
+        "lambda_filter": 187.0
+    },
+    {
+        "time": 1743936478.56,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 326.0,
+        "lambda_filter": 293.0
+    },
+    {
+        "time": 1743936479.57,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 295.0,
+        "lambda_filter": 250.0
+    },
+    {
+        "time": 1743936480.58,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 429.0,
+        "lambda_filter": 382.0
+    },
+    {
+        "time": 1743936481.61,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 377.0,
+        "lambda_filter": 328.0
+    },
+    {
+        "time": 1743936482.88,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 108.0,
+        "lambda_filter": 80.0
+    },
+    {
+        "time": 1743936483.92,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 6.0,
+        "lambda_filter": 4.0
+    },
+    {
+        "time": 1743936484.93,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 219.0,
+        "lambda_filter": 175.0
+    },
+    {
+        "time": 1743936485.96,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 272.0,
+        "lambda_filter": 236.0
+    },
+    {
+        "time": 1743936487.01,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 203.0,
+        "lambda_filter": 165.0
+    },
+    {
+        "time": 1743936488.07,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 95.0,
+        "lambda_filter": 70.0
+    },
+    {
+        "time": 1743936489.11,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 66.0,
+        "lambda_filter": 48.0
+    },
+    {
+        "time": 1743936490.17,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 102.0,
+        "lambda_filter": 69.0
+    },
+    {
+        "time": 1743936491.22,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 165.0,
+        "lambda_filter": 125.0
+    },
+    {
+        "time": 1743936492.51,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 45.0,
+        "lambda_filter": 33.0
+    },
+    {
+        "time": 1743936493.53,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 77.0,
+        "lambda_filter": 59.0
+    },
+    {
+        "time": 1743936494.62,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 56.0,
+        "lambda_filter": 41.0
+    },
+    {
+        "time": 1743936495.72,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 43.0,
+        "lambda_filter": 32.0
+    },
+    {
+        "time": 1743936497.04,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 150.0,
+        "lambda_filter": 115.0
+    },
+    {
+        "time": 1743936498.13,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 80.0,
+        "lambda_filter": 60.0
+    },
+    {
+        "time": 1743936499.26,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 81.0,
+        "lambda_filter": 58.0
+    },
+    {
+        "time": 1743936500.28,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 108.0,
+        "lambda_filter": 81.0
+    },
+    {
+        "time": 1743936501.31,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 193.0,
+        "lambda_filter": 166.0
+    },
+    {
+        "time": 1743936502.33,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 168.0,
+        "lambda_filter": 139.0
+    },
+    {
+        "time": 1743936503.36,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 133.0,
+        "lambda_filter": 102.0
+    },
+    {
+        "time": 1743936504.37,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 267.0,
+        "lambda_filter": 234.0
+    },
+    {
+        "time": 1743936505.38,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 341.0,
+        "lambda_filter": 294.0
+    },
+    {
+        "time": 1743936506.41,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 334.0,
+        "lambda_filter": 282.0
+    },
+    {
+        "time": 1743936507.46,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 93.0,
+        "lambda_filter": 67.0
+    },
+    {
+        "time": 1743936508.47,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 123.0,
+        "lambda_filter": 95.0
+    },
+    {
+        "time": 1743936509.48,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 208.0,
+        "lambda_filter": 169.0
+    },
+    {
+        "time": 1743936510.51,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 155.0,
+        "lambda_filter": 123.0
+    },
+    {
+        "time": 1743936511.52,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 284.0,
+        "lambda_filter": 249.0
+    },
+    {
+        "time": 1743936512.71,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 301.0,
+        "lambda_filter": 254.0
+    },
+    {
+        "time": 1743936513.72,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 333.0,
+        "lambda_filter": 285.0
+    },
+    {
+        "time": 1743936514.73,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 324.0,
+        "lambda_filter": 266.0
+    },
+    {
+        "time": 1743936515.76,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 244.0,
+        "lambda_filter": 200.0
+    },
+    {
+        "time": 1743936516.78,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 373.0,
+        "lambda_filter": 328.0
+    },
+    {
+        "time": 1743936517.81,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 176.0,
+        "lambda_filter": 142.0
+    },
+    {
+        "time": 1743936518.82,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 222.0,
+        "lambda_filter": 178.0
+    },
+    {
+        "time": 1743936519.83,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 239.0,
+        "lambda_filter": 203.0
+    },
+    {
+        "time": 1743936520.86,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 320.0,
+        "lambda_filter": 273.0
+    },
+    {
+        "time": 1743936521.87,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 289.0,
+        "lambda_filter": 246.0
+    },
+    {
+        "time": 1743936523.02,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 347.0,
+        "lambda_filter": 313.0
+    },
+    {
+        "time": 1743936524.06,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 207.0,
+        "lambda_filter": 162.0
+    },
+    {
+        "time": 1743936525.08,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 164.0,
+        "lambda_filter": 131.0
+    },
+    {
+        "time": 1743936526.11,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 253.0,
+        "lambda_filter": 204.0
+    },
+    {
+        "time": 1743936527.16,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 185.0,
+        "lambda_filter": 150.0
+    },
+    {
+        "time": 1743936528.18,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 244.0,
+        "lambda_filter": 192.0
+    },
+    {
+        "time": 1743936529.21,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 254.0,
+        "lambda_filter": 216.0
+    },
+    {
+        "time": 1743936530.22,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 236.0,
+        "lambda_filter": 210.0
+    },
+    {
+        "time": 1743936531.23,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 361.0,
+        "lambda_filter": 325.0
+    },
+    {
+        "time": 1743936532.26,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 256.0,
+        "lambda_filter": 213.0
+    },
+    {
+        "time": 1743936533.27,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 418.0,
+        "lambda_filter": 362.0
+    },
+    {
+        "time": 1743936534.28,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 441.0,
+        "lambda_filter": 384.0
+    },
+    {
+        "time": 1743936535.37,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 259.0,
+        "lambda_filter": 220.0
+    },
+    {
+        "time": 1743936536.38,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 316.0,
+        "lambda_filter": 256.0
+    },
+    {
+        "time": 1743936537.63,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 73.0,
+        "lambda_filter": 55.0
+    },
+    {
+        "time": 1743936538.91,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 140.0,
+        "lambda_filter": 99.0
+    },
+    {
+        "time": 1743936539.92,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 131.0,
+        "lambda_filter": 104.0
+    },
+    {
+        "time": 1743936540.93,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 172.0,
+        "lambda_filter": 138.0
+    },
+    {
+        "time": 1743936541.96,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 186.0,
+        "lambda_filter": 144.0
+    },
+    {
+        "time": 1743936542.97,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 373.0,
+        "lambda_filter": 328.0
+    },
+    {
+        "time": 1743936543.98,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 280.0,
+        "lambda_filter": 233.0
+    },
+    {
+        "time": 1743936545.02,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 311.0,
+        "lambda_filter": 253.0
+    },
+    {
+        "time": 1743936546.03,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 148.0,
+        "lambda_filter": 106.0
+    },
+    {
+        "time": 1743936547.06,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 178.0,
+        "lambda_filter": 137.0
+    },
+    {
+        "time": 1743936548.08,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 262.0,
+        "lambda_filter": 192.0
+    },
+    {
+        "time": 1743936549.12,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 224.0,
+        "lambda_filter": 177.0
+    },
+    {
+        "time": 1743936550.13,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 204.0,
+        "lambda_filter": 168.0
+    },
+    {
+        "time": 1743936551.16,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 245.0,
+        "lambda_filter": 201.0
+    },
+    {
+        "time": 1743936552.18,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 268.0,
+        "lambda_filter": 212.0
+    },
+    {
+        "time": 1743936553.21,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 161.0,
+        "lambda_filter": 117.0
+    },
+    {
+        "time": 1743936554.23,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 279.0,
+        "lambda_filter": 215.0
+    },
+    {
+        "time": 1743936555.26,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 93.0,
+        "lambda_filter": 69.0
+    },
+    {
+        "time": 1743936556.32,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 153.0,
+        "lambda_filter": 115.0
+    },
+    {
+        "time": 1743936557.33,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 174.0,
+        "lambda_filter": 136.0
+    },
+    {
+        "time": 1743936558.36,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 324.0,
+        "lambda_filter": 279.0
+    },
+    {
+        "time": 1743936559.37,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 291.0,
+        "lambda_filter": 146.0
+    },
+    {
+        "time": 1743936560.42,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 147.0,
+        "lambda_filter": 20.0
+    },
+    {
+        "time": 1743936561.47,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 62.0,
+        "lambda_filter": 23.0
+    },
+    {
+        "time": 1743936562.82,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 136.0,
+        "lambda_filter": 37.0
+    },
+    {
+        "time": 1743936563.86,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 241.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936564.88,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 203.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936565.91,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 104.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936566.92,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 179.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936567.96,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 321.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936568.97,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 454.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936570.01,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 374.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936571.02,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 482.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936572.03,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 327.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936573.06,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 210.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936574.08,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 293.0,
+        "lambda_filter": 29.0
+    },
+    {
+        "time": 1743936575.11,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 254.0,
+        "lambda_filter": 23.0
+    },
+    {
+        "time": 1743936576.13,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 109.0,
+        "lambda_filter": 26.0
+    },
+    {
+        "time": 1743936577.31,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 240.0,
+        "lambda_filter": 20.0
+    },
+    {
+        "time": 1743936578.33,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 220.0,
+        "lambda_filter": 32.0
+    },
+    {
+        "time": 1743936579.36,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 139.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936580.38,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 165.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936581.52,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 237.0,
+        "lambda_filter": 25.0
+    },
+    {
+        "time": 1743936582.53,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 404.0,
+        "lambda_filter": 25.0
+    },
+    {
+        "time": 1743936583.56,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 423.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936584.66,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 491.0,
+        "lambda_filter": 22.0
+    },
+    {
+        "time": 1743936585.68,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 378.0,
+        "lambda_filter": 30.0
+    },
+    {
+        "time": 1743936586.71,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 317.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936587.72,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 483.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936588.72,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 315.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936589.76,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 524.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936590.77,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 579.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936591.81,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 539.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936592.82,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 387.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936593.86,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 484.0,
+        "lambda_filter": 25.0
+    },
+    {
+        "time": 1743936594.87,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 320.0,
+        "lambda_filter": 25.0
+    },
+    {
+        "time": 1743936595.91,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 444.0,
+        "lambda_filter": 23.0
+    },
+    {
+        "time": 1743936596.92,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 489.0,
+        "lambda_filter": 29.0
+    },
+    {
+        "time": 1743936597.93,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 543.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936599.06,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 457.0,
+        "lambda_filter": 21.0
+    },
+    {
+        "time": 1743936600.07,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 418.0,
+        "lambda_filter": 27.0
+    },
+    {
+        "time": 1743936601.11,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 516.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936602.12,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 424.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936603.16,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 398.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936604.17,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 306.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936605.21,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 500.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936606.22,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 532.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936607.26,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 385.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936608.27,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 472.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936609.31,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 387.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936610.32,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 242.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936611.36,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 384.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936612.37,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 478.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936613.38,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 463.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936614.41,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 569.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936615.42,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 343.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936616.46,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 531.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936617.47,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 372.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936618.52,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 163.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936619.56,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 305.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936620.57,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 310.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936621.61,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 305.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936622.62,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 403.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936623.66,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 409.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936624.67,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 382.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936625.68,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 425.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936626.71,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 382.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936627.72,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 538.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936628.73,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 545.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936629.91,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 545.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936630.93,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 440.0,
+        "lambda_filter": 36.0
+    },
+    {
+        "time": 1743936631.96,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 303.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936632.97,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 492.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936634.01,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 539.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936635.22,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 413.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936636.26,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 502.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936637.27,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 107.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936638.31,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936639.32,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936640.36,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 54.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936641.37,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936642.38,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936643.41,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 54.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936644.42,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936645.46,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936646.47,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 36.0
+    },
+    {
+        "time": 1743936647.47,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 54.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936648.51,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936649.56,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 54.0,
+        "lambda_filter": 13.0
+    },
+    {
+        "time": 1743936650.57,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 54.0,
+        "lambda_filter": 35.0
+    },
+    {
+        "time": 1743936651.58,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936652.61,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 16.0
+    },
+    {
+        "time": 1743936653.62,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 58.0,
+        "lambda_filter": 29.0
+    },
+    {
+        "time": 1743936654.66,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 56.0,
+        "lambda_filter": 27.0
+    },
+    {
+        "time": 1743936655.67,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936656.68,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936657.71,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 54.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936658.72,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 55.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936659.76,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 59.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936660.77,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936661.78,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936662.81,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 54.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936663.82,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936664.83,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936665.86,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 55.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936667.02,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 55.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936668.06,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 70.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936669.07,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936670.21,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 39.0,
+        "lambda_filter": 14.0
+    },
+    {
+        "time": 1743936671.26,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 75.0,
+        "lambda_filter": 35.0
+    },
+    {
+        "time": 1743936672.28,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 47.0,
+        "lambda_filter": 25.0
+    },
+    {
+        "time": 1743936673.42,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 63.0,
+        "lambda_filter": 26.0
+    },
+    {
+        "time": 1743936674.46,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 73.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936675.57,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 54.0,
+        "lambda_filter": 21.0
+    },
+    {
+        "time": 1743936676.62,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 8.0,
+        "lambda_filter": 6.0
+    },
+    {
+        "time": 1743936677.78,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 6.0,
+        "lambda_filter": 5.0
+    },
+    {
+        "time": 1743936678.86,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 31.0,
+        "lambda_filter": 20.0
+    },
+    {
+        "time": 1743936679.88,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 216.0,
+        "lambda_filter": 80.0
+    },
+    {
+        "time": 1743936680.92,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936681.96,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 55.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936682.98,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 61.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936684.01,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 58.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936685.02,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936686.06,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936687.07,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 56.0,
+        "lambda_filter": 27.0
+    },
+    {
+        "time": 1743936688.11,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 58.0,
+        "lambda_filter": 26.0
+    },
+    {
+        "time": 1743936689.12,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 27.0
+    },
+    {
+        "time": 1743936690.16,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936691.17,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 54.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936692.21,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 54.0,
+        "lambda_filter": 22.0
+    },
+    {
+        "time": 1743936693.31,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 66.0,
+        "lambda_filter": 26.0
+    },
+    {
+        "time": 1743936694.37,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936695.48,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936696.56,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 63.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936697.71,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 63.0,
+        "lambda_filter": 28.0
+    },
+    {
+        "time": 1743936698.82,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 66.0,
+        "lambda_filter": 27.0
+    },
+    {
+        "time": 1743936699.86,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 66.0,
+        "lambda_filter": 29.0
+    },
+    {
+        "time": 1743936700.87,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936701.9,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 54.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936702.92,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936703.93,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936704.96,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 54.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936705.97,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936707.0,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936708.02,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936709.02,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 44.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936710.06,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 64.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936711.07,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 57.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936712.1,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 57.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936713.12,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936714.15,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936715.17,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936716.18,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 54.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936717.2,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936718.22,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936719.23,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 58.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936720.25,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 56.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936721.27,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936722.31,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 54.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936723.32,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936724.35,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936725.36,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 28.0
+    },
+    {
+        "time": 1743936726.51,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 54.0,
+        "lambda_filter": 20.0
+    },
+    {
+        "time": 1743936727.53,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 66.0,
+        "lambda_filter": 36.0
+    },
+    {
+        "time": 1743936728.55,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936729.57,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936730.6,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 56.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936731.62,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 58.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936732.66,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 42.0,
+        "lambda_filter": 15.0
+    },
+    {
+        "time": 1743936733.92,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 50.0,
+        "lambda_filter": 22.0
+    },
+    {
+        "time": 1743936735.07,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 88.0,
+        "lambda_filter": 35.0
+    },
+    {
+        "time": 1743936736.11,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 37.0,
+        "lambda_filter": 26.0
+    },
+    {
+        "time": 1743936737.15,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 89.0,
+        "lambda_filter": 34.0
+    },
+    {
+        "time": 1743936738.17,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936739.2,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936740.22,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936741.25,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 54.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936742.27,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936743.3,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936744.31,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936745.35,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936746.38,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936747.4,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 54.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936748.42,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 46.0,
+        "lambda_filter": 19.0
+    },
+    {
+        "time": 1743936749.46,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 63.0,
+        "lambda_filter": 29.0
+    },
+    {
+        "time": 1743936750.47,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 65.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936751.5,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 57.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936752.51,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 57.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936753.53,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936754.55,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936755.57,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 59.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936756.61,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 49.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936757.63,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936758.65,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936759.67,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936760.81,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 43.0,
+        "lambda_filter": 25.0
+    },
+    {
+        "time": 1743936761.82,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 77.0,
+        "lambda_filter": 33.0
+    },
+    {
+        "time": 1743936762.85,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 55.0,
+        "lambda_filter": 19.0
+    },
+    {
+        "time": 1743936763.87,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 59.0,
+        "lambda_filter": 29.0
+    },
+    {
+        "time": 1743936764.9,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936765.95,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 57.0,
+        "lambda_filter": 20.0
+    },
+    {
+        "time": 1743936766.97,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 63.0,
+        "lambda_filter": 28.0
+    },
+    {
+        "time": 1743936768.0,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 54.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936769.02,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936770.05,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 60.0,
+        "lambda_filter": 24.0
+    },
+    {
+        "time": 1743936771.15,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 54.0,
+        "lambda_filter": 19.0
+    }
+]

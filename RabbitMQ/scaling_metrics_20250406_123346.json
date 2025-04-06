@@ -327,5 +327,96 @@
         "filter_workers": 0,
         "lambda_insult": 0.0,
         "lambda_filter": 0.0
+    },
+    {
+        "time": 1743935676.38,
+        "insult_workers": 0,
+        "filter_workers": 0,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0
+    },
+    {
+        "time": 1743935677.53,
+        "insult_workers": 0,
+        "filter_workers": 0,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0
+    },
+    {
+        "time": 1743935678.54,
+        "insult_workers": 0,
+        "filter_workers": 0,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0
+    },
+    {
+        "time": 1743935679.59,
+        "insult_workers": 0,
+        "filter_workers": 0,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0
+    },
+    {
+        "time": 1743935680.59,
+        "insult_workers": 0,
+        "filter_workers": 0,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0
+    },
+    {
+        "time": 1743935681.65,
+        "insult_workers": 0,
+        "filter_workers": 0,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0
+    },
+    {
+        "time": 1743935682.66,
+        "insult_workers": 0,
+        "filter_workers": 0,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0
+    },
+    {
+        "time": 1743935683.68,
+        "insult_workers": 0,
+        "filter_workers": 0,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0
+    },
+    {
+        "time": 1743935684.85,
+        "insult_workers": 0,
+        "filter_workers": 0,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0
+    },
+    {
+        "time": 1743935686.19,
+        "insult_workers": 0,
+        "filter_workers": 0,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0
+    },
+    {
+        "time": 1743935687.29,
+        "insult_workers": 0,
+        "filter_workers": 0,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0
+    },
+    {
+        "time": 1743935688.3,
+        "insult_workers": 0,
+        "filter_workers": 0,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0
+    },
+    {
+        "time": 1743935689.33,
+        "insult_workers": 0,
+        "filter_workers": 0,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0
     }
 ]
