@@ -11,17 +11,17 @@ import insult_filter_client
 
 # Parámetros de prueba
 NUM_SERVERS_LIST = [1, 2, 3]
-NUM_CLIENTS = 10
-NUM_MESSAGES = 10
-NUM_MESSAGES_FILTER = 10
+NUM_CLIENTS = 5
+NUM_MESSAGES = 50
+NUM_MESSAGES_FILTER = 50
 RESULTS_FILE = "results.json"
 RESULTS_FILE_FILTER = "results_filter.json"
 
 def start_filter():
-    return subprocess.Popen(["python", "insult_filter.py"])
+    return subprocess.Popen(["python3", "insult_filter.py"])
 
 def start_server():
-    return subprocess.Popen(["python", "insult_service.py"]) 
+    return subprocess.Popen(["python3", "insult_service.py"]) 
 
 def start_AngryProducer():
     for _ in range(NUM_MESSAGES_FILTER):
@@ -66,7 +66,7 @@ def run_test():
             s.terminate()
 
         if num_servers == 1:
-            baseline_time = total_time
+            baseline_time = total_time # tiempo con un servidor
 
         all_results[num_servers] = baseline_time / total_time  # Speedup
 

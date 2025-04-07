@@ -222,5 +222,75 @@
         "time": 4.982948303222656e-05,
         "timestamp": "2025-04-05T16:53:56.576693",
         "nodes": 3
+    },
+    {
+        "service": "Pyro4",
+        "operation": "send/receive",
+        "time": 0.0020589828491210938,
+        "timestamp": "2025-04-07T18:55:29.245738",
+        "nodes": 1
+    },
+    {
+        "service": "XML-RPC",
+        "operation": "send/receive",
+        "time": 4.38690185546875e-05,
+        "timestamp": "2025-04-07T18:55:29.274111",
+        "nodes": 1
+    },
+    {
+        "service": "Pyro4",
+        "operation": "send/receive",
+        "time": 0.0018341541290283203,
+        "timestamp": "2025-04-07T18:56:18.728039",
+        "nodes": 1
+    },
+    {
+        "service": "XML-RPC",
+        "operation": "send/receive",
+        "time": 4.100799560546875e-05,
+        "timestamp": "2025-04-07T18:56:18.749977",
+        "nodes": 1
+    },
+    {
+        "service": "Pyro4",
+        "operation": "send/receive",
+        "time": 0.0018432140350341797,
+        "timestamp": "2025-04-07T18:56:33.638424",
+        "nodes": 2
+    },
+    {
+        "service": "XML-RPC",
+        "operation": "send/receive",
+        "time": 3.790855407714844e-05,
+        "timestamp": "2025-04-07T18:56:33.663783",
+        "nodes": 2
+    },
+    {
+        "service": "Pyro4",
+        "operation": "send/receive",
+        "time": 0.0013659000396728516,
+        "timestamp": "2025-04-07T18:56:42.656432",
+        "nodes": 2
+    },
+    {
+        "service": "XML-RPC",
+        "operation": "send/receive",
+        "time": 3.695487976074219e-05,
+        "timestamp": "2025-04-07T18:56:42.680077",
+        "nodes": 2
+    },
+    {
+        "service": "Pyro4",
+        "operation": "send/receive",
+        "time": 0.0024466514587402344,
+        "timestamp": "2025-04-07T18:56:58.600689",
+        "nodes": 3
+    },
+    {
+        "service": "XML-RPC",
+        "operation": "send/receive",
+        "time": 4.696846008300781e-05,
+        "timestamp": "2025-04-07T18:56:58.627918",
+        "nodes": 3
     }
 ]

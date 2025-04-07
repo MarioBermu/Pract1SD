@@ -57,6 +57,7 @@ channel = connection.channel()
 channel.queue_declare(queue=queue_receive)
 channel.queue_declare(queue=queue_send)
 
+channel.basic_qos(prefetch_count=1)
 channel.basic_consume(queue=queue_receive, on_message_callback=callback)
 print("InsultService is running and waiting for messages...")
 channel.start_consuming()

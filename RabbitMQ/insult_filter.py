@@ -1,6 +1,7 @@
 import pika
 import json
 import redis
+import time
 
 REDIS_KEY = "filter_processed_count"
 
@@ -13,6 +14,7 @@ redis_client = redis.Redis(host='localhost', port=6379, db=0)  # Configuración 
 insults = {"Idiota", "Torpe", "Patán", "Zoquete", "Burro", "Cabezón", "Menso", "Necio"}
 
 def censor_text(text):
+    time.sleep(0.1)
     for insult in insults:
         text = text.replace(insult, "CENSORED")
     redis_client.rpush("RESULTS", text)  # Almacenar el texto procesado en Redis
@@ -41,7 +43,9 @@ def callback(ch, method, properties, body):
 connection = pika.BlockingConnection(pika.ConnectionParameters(host=rabbitmq_host))
 channel = connection.channel()
 channel.queue_declare(queue=queue_receive)
+
 channel.queue_declare(queue=queue_send)
+channel.basic_qos(prefetch_count=1)
 channel.basic_consume(queue=queue_receive, on_message_callback=callback)
 print("Text service is running and waiting for messages...")
 channel.start_consuming()

@@ -4,19 +4,19 @@ import threading
 
 # Función para iniciar los servidores
 def start_server():
-    subprocess.Popen(["python", "Insult_service_server.py"])
+    subprocess.Popen(["python3", "Insult_service_server.py"])
 
 # Función para los clientes que envían insultos
 def client_task():
     for _ in range(10):  # Cada cliente envía 10 mensajes
-        subprocess.run(["python", "Insult_service_client.py"])
+        subprocess.run(["python3", "Insult_service_client.py"])
 
 def start_filter():
-    subprocess.Popen(["python", "Insult_filter_server.py"])
+    subprocess.Popen(["python3", "Insult_filter_server.py"])
 
 def start_filter_client():
     for _ in range(10):  # Cada cliente envía 2 mensajes
-        subprocess.run(["python", "Insult_filter_client.py"])
+        subprocess.run(["python3", "Insult_filter_client.py"])
 
 # Ejecutar el test para diferentes configuraciones de servidores
 server_counts = [1, 2, 3]
