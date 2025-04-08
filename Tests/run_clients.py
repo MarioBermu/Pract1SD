@@ -1,4 +1,3 @@
-# ---------- run_clients.py ----------
 import Pyro4
 import multiprocessing
 import time
@@ -18,7 +17,6 @@ num_nodos = int(sys.argv[1])
 SERVER_LIST_FILE = "active_servers.json"
 PYRO_SERVICES_FILE = "active_pyro_services.txt"
 
-# ---------- Helpers ----------
 def get_all_xmlrpc_servers():
     try:
         with open(SERVER_LIST_FILE, "r") as file:
@@ -35,7 +33,7 @@ def get_all_valid_pyro_services():
             for name in names:
                 try:
                     proxy = Pyro4.Proxy(f"PYRONAME:{name}")
-                    proxy._pyroBind()  # Intenta conectarse para validarlo
+                    proxy._pyroBind()  
                     proxies.append(proxy)
                 except Pyro4.errors.CommunicationError:
                     print(f"⚠️ Servicio Pyro4 no disponible: {name}")
@@ -61,7 +59,6 @@ RESULTS_FILE = "results.json"
 LOCK = multiprocessing.Lock()
 RESULTS = []
 
-# ---------- Result Handling ----------
 def save_result(data):
     with LOCK:
         RESULTS.append(data)
@@ -79,7 +76,6 @@ def write_results_to_file():
         with open(RESULTS_FILE, "w") as file:
             json.dump(existing_results, file, indent=4)
 
-# ---------- Workload Functions ----------
 def send_insults_pyro():
     for i in range(100):
         insult = insults[i % len(insults)]
@@ -120,7 +116,7 @@ def receive_insults_xmlrpc():
         except Exception as e:
             print(f"XML-RPC Receive Error: {type(e).__name__} - {e}")
 
-# ---------- MAIN ----------
+
 if __name__ == "__main__":
     time.sleep(2)
     start_time = time.time()
@@ -128,7 +124,6 @@ if __name__ == "__main__":
     NUM_CLIENTS = 2
     with concurrent.futures.ThreadPoolExecutor(max_workers=NUM_CLIENTS * 2) as executor:
 
-        # ---------- PYRO ----------
         futures = []
         start_time_pyro = time.time()
         for _ in range(NUM_CLIENTS):
@@ -145,7 +140,6 @@ if __name__ == "__main__":
             "nodes": num_nodos
         })
 
-        # ---------- XML-RPC ----------
         futures = []
         start_time_xmlrpc = time.time()
         for _ in range(NUM_CLIENTS):

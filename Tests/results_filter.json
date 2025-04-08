@@ -1,79 +1,142 @@
 [
     {
         "service": "Pyro4",
-        "operation": "send/receive",
-        "time": 0.0017499923706054688,
-        "timestamp": "2025-04-08T11:03:34.464749",
+        "operation": "send",
+        "time": 0.0233306884765625,
+        "timestamp": "2025-04-08T13:13:14.149161",
         "nodes": 1
     },
     {
         "service": "XML-RPC",
-        "operation": "send/receive",
-        "time": 5.0067901611328125e-05,
-        "timestamp": "2025-04-08T11:03:34.488448",
+        "operation": "receive",
+        "time": 0.005810260772705078,
+        "timestamp": "2025-04-08T13:13:14.155065",
         "nodes": 1
     },
     {
         "service": "Pyro4",
-        "operation": "send/receive",
-        "time": 0.0017800331115722656,
-        "timestamp": "2025-04-08T11:03:45.176751",
+        "operation": "send",
+        "time": 0.0218048095703125,
+        "timestamp": "2025-04-08T13:13:18.672580",
         "nodes": 1
     },
     {
         "service": "XML-RPC",
-        "operation": "send/receive",
-        "time": 0.00010204315185546875,
-        "timestamp": "2025-04-08T11:03:45.194453",
+        "operation": "receive",
+        "time": 0.008616924285888672,
+        "timestamp": "2025-04-08T13:13:18.681272",
         "nodes": 1
     },
     {
         "service": "Pyro4",
-        "operation": "send/receive",
-        "time": 0.001646280288696289,
-        "timestamp": "2025-04-08T11:04:21.703528",
+        "operation": "send",
+        "time": 0.02478480339050293,
+        "timestamp": "2025-04-08T13:13:34.328606",
         "nodes": 2
     },
     {
         "service": "XML-RPC",
-        "operation": "send/receive",
-        "time": 4.291534423828125e-05,
-        "timestamp": "2025-04-08T11:04:27.067297",
+        "operation": "receive",
+        "time": 0.013247966766357422,
+        "timestamp": "2025-04-08T13:13:34.341968",
         "nodes": 2
     },
     {
         "service": "Pyro4",
-        "operation": "send/receive",
-        "time": 0.0014951229095458984,
-        "timestamp": "2025-04-08T11:04:48.628181",
-        "nodes": 3
+        "operation": "send",
+        "time": 0.025799989700317383,
+        "timestamp": "2025-04-08T13:13:39.527034",
+        "nodes": 2
     },
     {
         "service": "XML-RPC",
-        "operation": "send/receive",
-        "time": 3.62396240234375e-05,
-        "timestamp": "2025-04-08T11:07:39.214387",
-        "nodes": 3
+        "operation": "receive",
+        "time": 0.01529693603515625,
+        "timestamp": "2025-04-08T13:13:39.542480",
+        "nodes": 2
     },
     {
         "service": "Pyro4",
-        "operation": "send/receive",
-        "time": 0.0018768310546875,
-        "timestamp": "2025-04-08T11:07:50.410813",
-        "nodes": 1
+        "operation": "send",
+        "time": 0.017062902450561523,
+        "timestamp": "2025-04-08T13:13:43.780579",
+        "nodes": 2
     },
     {
         "service": "XML-RPC",
-        "operation": "send/receive",
-        "time": 3.790855407714844e-05,
-        "timestamp": "2025-04-08T11:07:50.432516",
-        "nodes": 1
+        "operation": "receive",
+        "time": 0.021916866302490234,
+        "timestamp": "2025-04-08T13:13:43.802664",
+        "nodes": 2
+    },
+    {
+        "service": "Pyro4",
+        "operation": "send",
+        "time": 0.01549386978149414,
+        "timestamp": "2025-04-08T13:13:47.083698",
+        "nodes": 2
     },
     {
         "service": "XML-RPC",
-        "operation": "send/receive",
-        "time": 4.00543212890625e-05,
-        "timestamp": "2025-04-08T11:08:10.183264",
+        "operation": "receive",
+        "time": 0.01815176010131836,
+        "timestamp": "2025-04-08T13:13:47.101960",
+        "nodes": 2
+    },
+    {
+        "service": "Pyro4",
+        "operation": "send",
+        "time": 0.021351099014282227,
+        "timestamp": "2025-04-08T13:13:52.139277",
+        "nodes": 2
+    },
+    {
+        "service": "XML-RPC",
+        "operation": "receive",
+        "time": 0.018613815307617188,
+        "timestamp": "2025-04-08T13:13:52.157982",
+        "nodes": 2
+    },
+    {
+        "service": "Pyro4",
+        "operation": "send",
+        "time": 0.01888418197631836,
+        "timestamp": "2025-04-08T13:13:59.464369",
+        "nodes": 2
+    },
+    {
+        "service": "XML-RPC",
+        "operation": "receive",
+        "time": 0.018360137939453125,
+        "timestamp": "2025-04-08T13:13:59.482847",
+        "nodes": 2
+    },
+    {
+        "service": "Pyro4",
+        "operation": "send",
+        "time": 0.01189875602722168,
+        "timestamp": "2025-04-08T13:14:03.033446",
+        "nodes": 2
+    },
+    {
+        "service": "XML-RPC",
+        "operation": "receive",
+        "time": 0.019122838973999023,
+        "timestamp": "2025-04-08T13:14:03.052693",
+        "nodes": 2
+    },
+    {
+        "service": "Pyro4",
+        "operation": "send",
+        "time": 0.02291584014892578,
+        "timestamp": "2025-04-08T13:14:08.057420",
+        "nodes": 2
+    },
+    {
+        "service": "XML-RPC",
+        "operation": "receive",
+        "time": 0.023873567581176758,
+        "timestamp": "2025-04-08T13:14:08.081358",
         "nodes": 2
     }
 ]
