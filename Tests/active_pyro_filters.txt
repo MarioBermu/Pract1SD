@@ -1,2 +1,3 @@
-insult.filter.68333
-insult.filter.68337
+insult.filter.72891
+insult.filter.72895
+insult.filter.72899

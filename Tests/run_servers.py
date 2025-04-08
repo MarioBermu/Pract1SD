@@ -1,4 +1,3 @@
-# ---------- run_servers.py ----------
 import subprocess
 import time
 import sys

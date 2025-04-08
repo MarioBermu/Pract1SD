@@ -117,7 +117,7 @@ if __name__ == "__main__":
     start_time = time.time()
 
     NUM_CLIENTS = 3
-    with concurrent.futures.ThreadPoolExecutor(max_workers=NUM_CLIENTS * 4) as executor:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=NUM_CLIENTS * 2) as executor:
         futures = []
 
         # Lanzar tareas de envio
