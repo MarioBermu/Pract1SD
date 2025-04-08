@@ -1,5 +1,6 @@
 import Pyro4
 import random
+import os
 
 @Pyro4.expose
 @Pyro4.behavior(instance_mode="single")
@@ -14,19 +15,25 @@ class InsultService:
         return "Insulto ya existe"
 
     def get_insults(self):
-        return self.insults  # Devuelve la lista completa de insultos
-    
+        return self.insults
+
     def get_random_insult(self):
         if not self.insults:
             return "No hay insultos en la lista."
         return random.choice(self.insults)
 
-# Inicializar servidor PyRO4
-daemon = Pyro4.Daemon()  # Servidor PyRO4
-ns = Pyro4.locateNS()  # Buscar el Name Server de PyRO4
+# Inicializar servidor Pyro4
+daemon = Pyro4.Daemon()
+ns = Pyro4.locateNS()
+
 insult_service = InsultService()
-uri = daemon.register(InsultService)  # Registrar el objeto remoto
-ns.register("insult.service", uri)  # Registrar el servicio con un nombre
+service_name = f"insult.service.{os.getpid()}"
+uri = daemon.register(insult_service, service_name)
+ns.register(service_name, uri)
+
+# Guardar el nombre del servicio registrado para los clientes
+with open("active_pyro_services.txt", "a") as f:
+    f.write(service_name + "\n")
 
 print(f"InsultService corriendo en {uri}")
-daemon.requestLoop()  # Mantiene el servidor en ejecución
+daemon.requestLoop()

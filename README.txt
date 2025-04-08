@@ -2,7 +2,7 @@
 
 Entrar en la carpeta Tests y abrir 3 terminales. 
 En la primera ejecutaremos: 
-python3 run_servers.py <num_nodos> (Primero haremos con uno, luego dos y asi todos los que se deseen)
+python3 run_servers.py <num_nodos> (Primero haremos con uno, luego dos y asi hasta 3)
 
 En la segunda ejecutaremos los clientes del insult_server: 
 python3 run_clients.py <num_nodos> (Igual que en el server)

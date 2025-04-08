@@ -1,6 +1,8 @@
+# ---------- run_servers.py ----------
 import subprocess
 import time
 import sys
+import os
 
 # Recibir número de nodos desde la línea de comandos
 if len(sys.argv) < 2:
@@ -9,6 +11,9 @@ if len(sys.argv) < 2:
 
 num_nodos = int(sys.argv[1])
 
+# Limpiar registros previos
+open("active_pyro_services.txt", "w").close()
+open("active_servers.json", "w").close()
 
 available_ports = [8000, 8001, 8002, 8003, 8004, 8005, 8006]
 
@@ -25,8 +30,6 @@ base_servers = [
 
 # Crear múltiples instancias según num_nodos
 servers = []
-port_index = 0
-
 service_port_index = 0
 filter_port_index = 0
 
@@ -42,6 +45,7 @@ for i in range(num_nodos):
             servers.append([arg.replace("{port}", str(assigned_port)) for arg in server])
         else:
             servers.append(server)
+
 processes = []
 
 print(f"Iniciando servidores con {num_nodos} nodos...")
