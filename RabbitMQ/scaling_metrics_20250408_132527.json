@@ -1,0 +1,1091 @@
+[
+    {
+        "time": 1744111529.28,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111530.33,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111531.37,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111532.42,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111533.69,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111534.74,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111535.85,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111536.91,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111538.0,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111539.08,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111540.12,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111541.18,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111542.22,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 2.0,
+        "lambda_filter": 2.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111543.27,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 1.0,
+        "lambda_filter": 2.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111544.33,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111545.37,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111546.42,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111547.47,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111548.52,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111549.56,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111550.64,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 3.0,
+        "lambda_filter": 2.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111551.84,
+        "insult_workers": 2,
+        "filter_workers": 2,
+        "lambda_insult": 5.0,
+        "lambda_filter": 8.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111552.89,
+        "insult_workers": 2,
+        "filter_workers": 2,
+        "lambda_insult": 6.0,
+        "lambda_filter": 6.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111554.0,
+        "insult_workers": 2,
+        "filter_workers": 2,
+        "lambda_insult": 5.0,
+        "lambda_filter": 6.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111555.11,
+        "insult_workers": 2,
+        "filter_workers": 2,
+        "lambda_insult": 5.0,
+        "lambda_filter": 8.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111556.19,
+        "insult_workers": 3,
+        "filter_workers": 3,
+        "lambda_insult": 11.0,
+        "lambda_filter": 12.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111557.24,
+        "insult_workers": 3,
+        "filter_workers": 3,
+        "lambda_insult": 11.0,
+        "lambda_filter": 12.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111558.33,
+        "insult_workers": 3,
+        "filter_workers": 3,
+        "lambda_insult": 10.0,
+        "lambda_filter": 12.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111559.39,
+        "insult_workers": 3,
+        "filter_workers": 4,
+        "lambda_insult": 10.0,
+        "lambda_filter": 16.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111560.46,
+        "insult_workers": 3,
+        "filter_workers": 4,
+        "lambda_insult": 11.0,
+        "lambda_filter": 14.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111561.53,
+        "insult_workers": 4,
+        "filter_workers": 5,
+        "lambda_insult": 16.0,
+        "lambda_filter": 18.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111562.59,
+        "insult_workers": 5,
+        "filter_workers": 5,
+        "lambda_insult": 17.0,
+        "lambda_filter": 18.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111563.67,
+        "insult_workers": 4,
+        "filter_workers": 5,
+        "lambda_insult": 15.0,
+        "lambda_filter": 18.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111564.72,
+        "insult_workers": 4,
+        "filter_workers": 5,
+        "lambda_insult": 15.0,
+        "lambda_filter": 18.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111565.81,
+        "insult_workers": 5,
+        "filter_workers": 6,
+        "lambda_insult": 18.0,
+        "lambda_filter": 22.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111566.89,
+        "insult_workers": 5,
+        "filter_workers": 6,
+        "lambda_insult": 20.0,
+        "lambda_filter": 24.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111567.98,
+        "insult_workers": 6,
+        "filter_workers": 8,
+        "lambda_insult": 24.0,
+        "lambda_filter": 30.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111569.03,
+        "insult_workers": 5,
+        "filter_workers": 7,
+        "lambda_insult": 20.0,
+        "lambda_filter": 26.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111570.17,
+        "insult_workers": 5,
+        "filter_workers": 6,
+        "lambda_insult": 20.0,
+        "lambda_filter": 24.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111571.24,
+        "insult_workers": 7,
+        "filter_workers": 8,
+        "lambda_insult": 29.0,
+        "lambda_filter": 30.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111572.31,
+        "insult_workers": 7,
+        "filter_workers": 8,
+        "lambda_insult": 25.0,
+        "lambda_filter": 31.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111573.44,
+        "insult_workers": 7,
+        "filter_workers": 9,
+        "lambda_insult": 25.0,
+        "lambda_filter": 36.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111574.53,
+        "insult_workers": 8,
+        "filter_workers": 9,
+        "lambda_insult": 30.0,
+        "lambda_filter": 33.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111575.62,
+        "insult_workers": 7,
+        "filter_workers": 8,
+        "lambda_insult": 27.0,
+        "lambda_filter": 32.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111576.68,
+        "insult_workers": 8,
+        "filter_workers": 9,
+        "lambda_insult": 31.0,
+        "lambda_filter": 36.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111577.74,
+        "insult_workers": 8,
+        "filter_workers": 10,
+        "lambda_insult": 30.0,
+        "lambda_filter": 42.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111578.86,
+        "insult_workers": 9,
+        "filter_workers": 10,
+        "lambda_insult": 34.0,
+        "lambda_filter": 38.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111580.04,
+        "insult_workers": 8,
+        "filter_workers": 10,
+        "lambda_insult": 32.0,
+        "lambda_filter": 40.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111581.12,
+        "insult_workers": 9,
+        "filter_workers": 9,
+        "lambda_insult": 35.0,
+        "lambda_filter": 36.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111582.18,
+        "insult_workers": 8,
+        "filter_workers": 10,
+        "lambda_insult": 30.0,
+        "lambda_filter": 44.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111583.24,
+        "insult_workers": 6,
+        "filter_workers": 8,
+        "lambda_insult": 0.0,
+        "lambda_filter": 2.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111584.33,
+        "insult_workers": 4,
+        "filter_workers": 6,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111585.39,
+        "insult_workers": 2,
+        "filter_workers": 4,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111586.47,
+        "insult_workers": 1,
+        "filter_workers": 2,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111587.53,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111588.58,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111589.63,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111590.7,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111591.87,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111592.98,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111594.04,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111595.24,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111596.32,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111597.39,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111598.45,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111599.51,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111600.57,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111601.61,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111602.65,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111603.72,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111604.76,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111605.82,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111606.87,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111607.93,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111608.98,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111610.02,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111611.07,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111612.11,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111613.16,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111614.21,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111615.25,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111616.56,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111617.62,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111618.68,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111619.72,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111620.77,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111621.82,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111622.88,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111623.93,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111624.97,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111626.03,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111627.12,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111628.19,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111629.4,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111630.56,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111631.66,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111632.71,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111633.77,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111634.83,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111635.88,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111636.94,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111638.02,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111639.07,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111640.12,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111641.17,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111642.22,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111643.28,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111644.33,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111645.38,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111646.42,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111647.47,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111648.65,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111649.72,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111650.87,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111651.94,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111653.14,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111654.21,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111655.29,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111656.36,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111657.42,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    },
+    {
+        "time": 1744111658.47,
+        "insult_workers": 1,
+        "filter_workers": 1,
+        "lambda_insult": 0.0,
+        "lambda_filter": 0.0,
+        "queue_insult_backlog": 0,
+        "queue_filter_backlog": 0
+    }
+]

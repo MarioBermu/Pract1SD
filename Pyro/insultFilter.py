@@ -7,8 +7,13 @@ class InsultFilterService:
     def __init__(self):
         self.filtered_texts = []
         self.insult_words = {"tonto", "idiota", "torpe", "burro"}
+        self.request_count = 0
+
 
     def filter_text(self, text):
+        self.request_count += 1
+        print(f"[PYRO FILTER:{os.getpid()}] Peticiones recibidas: {self.request_count}")
+
         words = text.split()
         censored_text = " ".join("CENSORED" if word.lower() in self.insult_words else word for word in words)
         self.filtered_texts.append(censored_text)

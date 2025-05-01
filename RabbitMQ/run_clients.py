@@ -54,7 +54,7 @@ def progressive_load(insult_rate, text_rate, max_clients=5, step_time=10):
         print(f"[{i * step_time}s] Activos -> Insultos: {i+1}, Textos: {i+1}")
         time.sleep(step_time)
 
-    print("🟢 Carga establecida. Esperando Ctrl+C para detener...")
+    print(" Carga establecida. Esperando Ctrl+C para detener...")
 
     try:
         while True:

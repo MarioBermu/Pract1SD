@@ -1,3 +1,3 @@
-insult.service.72889
-insult.service.72893
-insult.service.72897
+insult.service.68708
+insult.service.68712
+insult.service.68716

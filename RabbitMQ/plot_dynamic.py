@@ -6,11 +6,11 @@ import json
 # Buscar el último archivo JSON generado
 json_files = sorted([f for f in os.listdir('.') if f.startswith("scaling_metrics_") and f.endswith(".json")])
 if not json_files:
-    print("❌ No se encontró ningún archivo de métricas .json.")
+    print(" No se encontró ningún archivo de métricas .json.")
     exit()
 
 latest_json = json_files[-1]
-print(f"📊 Usando archivo de métricas: {latest_json}")
+print(f" Usando archivo de métricas: {latest_json}")
 
 # Leer el JSON como DataFrame
 with open(latest_json, 'r') as f:

@@ -14,6 +14,7 @@ num_nodos = int(sys.argv[1])
 open("active_pyro_services.txt", "w").close()
 open("active_servers.json", "w").close()
 open("active_pyro_filters.txt", "w").close()
+open("active_servers_filter.json", "w").close()
 
 available_ports = [8000, 8001, 8002, 8003, 8004, 8005, 8006]
 

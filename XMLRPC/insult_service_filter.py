@@ -7,6 +7,8 @@ import json
 import os
 
 SERVER_LIST_FILE = "active_servers_filter.json"
+request_count = 0
+
 
 def register_server(port):
     """Registra el puerto del servidor en el archivo JSON"""
@@ -43,6 +45,10 @@ filtered_texts = []
 
 def filter_text(text):
     """Filtra los insultos en el texto y los reemplaza por 'CENSORED'"""
+    global request_count
+    request_count += 1
+    print(f"[XML-RPC FILTER:{port}] Peticiones recibidas: {request_count}")
+    
     pattern = r'\b(' + '|'.join(insults) + r')\b'  # Expresión regular para detectar palabras exactas
     filtered_text = re.sub(pattern, 'CENSORED', text, flags=re.IGNORECASE)
     filtered_texts.append(filtered_text)

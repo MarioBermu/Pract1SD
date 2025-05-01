@@ -6,6 +6,7 @@ import json
 from datetime import datetime
 import concurrent.futures
 import sys
+import traceback
 
 if len(sys.argv) < 2:
     print("Uso: python3 run_clients_filter.py <num_nodos>")
@@ -16,11 +17,14 @@ num_nodos = int(sys.argv[1])
 SERVER_LIST_FILE = "active_servers_filter.json"
 PYRO_FILTERS_FILE = "active_pyro_filters.txt"
 
-def get_all_xmlrpc_servers():
+REPEAT_PYRO = 3 * num_nodos
+REPEAT_XMLRPC = 2 * num_nodos
+
+def get_all_xmlrpc_ports():
     try:
         with open(SERVER_LIST_FILE, "r") as file:
-            servers = json.load(file)
-            return [xmlrpc.client.ServerProxy(f"http://localhost:{port}/RPC2", allow_none=True) for port in servers]
+            ports = json.load(file)
+            return ports if isinstance(ports, list) else []
     except (FileNotFoundError, json.JSONDecodeError):
         return []
 
@@ -40,11 +44,11 @@ def get_valid_pyro_filters():
         pass
     return proxies
 
-xmlrpc_servers = get_all_xmlrpc_servers()
+xmlrpc_ports = get_all_xmlrpc_ports()
 pyro_insult_filters = get_valid_pyro_filters()
 
-if not xmlrpc_servers:
-    print("⚠️ No hay servidores XML-RPC disponibles")
+if not xmlrpc_ports:
+    print("⚠️ No hay puertos XML-RPC disponibles")
     sys.exit(1)
 if not pyro_insult_filters:
     print("⚠️ No hay filtros Pyro disponibles")
@@ -77,46 +81,54 @@ def write_results_to_file():
             json.dump(existing_results, file, indent=4)
 
 def send_texts_pyro():
-    for i, text in enumerate(texts):
-        try:
-            proxy = pyro_insult_filters[i % len(pyro_insult_filters)]
-            filtered = proxy.filter_text(text)
-        except Exception as e:
-            print(f"Pyro4 Filter Error: {type(e).__name__} - {e}")
+    for _ in range(REPEAT_PYRO):
+        for i, text in enumerate(texts):
+            try:
+                proxy = pyro_insult_filters[i % len(pyro_insult_filters)]
+                proxy.filter_text(text)
+            except Exception as e:
+                print(f"Pyro4 Filter Error: {type(e).__name__} - {e}")
 
 def receive_texts_pyro():
-    for i in range(len(pyro_insult_filters)):
-        try:
-            proxy = pyro_insult_filters[i % len(pyro_insult_filters)]
-            filtered_texts_pyro = proxy.get_filtered_texts()
-            for txt in filtered_texts_pyro:
-                print("[Pyro4] Texto filtrado:", txt)
-        except Exception as e:
-            print(f"Pyro4 Receive Error: {type(e).__name__} - {e}")
+    for _ in range(REPEAT_PYRO):
+        for i in range(len(pyro_insult_filters)):
+            try:
+                proxy = pyro_insult_filters[i % len(pyro_insult_filters)]
+                filtered_texts_pyro = proxy.get_filtered_texts()
+                #for txt in filtered_texts_pyro:
+                    #print("[Pyro4] Texto filtrado:", txt)
+            except Exception as e:
+                print(f"Pyro4 Receive Error: {type(e).__name__} - {e}")
 
 def send_texts_xmlrpc():
-    for i, text in enumerate(texts):
-        try:
-            server = xmlrpc_servers[i % len(xmlrpc_servers)]
-            filtered_text = server.filter_text(text)
-        except Exception as e:
-            print(f"XML-RPC Send Error: {e}")
+    for _ in range(REPEAT_XMLRPC):
+        for i, text in enumerate(texts):
+            try:
+                port = xmlrpc_ports[i % len(xmlrpc_ports)]
+                server = xmlrpc.client.ServerProxy(f"http://localhost:{port}/RPC2", allow_none=True)
+                server.filter_text(text)
+            except Exception:
+                print("XML-RPC Send Error:")
+                traceback.print_exc()
 
 def receive_texts_xmlrpc():
-    for i in range(len(xmlrpc_servers)):
-        try:
-            server = xmlrpc_servers[i]
-            filtered_texts = server.get_filtered_texts()
-            for t in filtered_texts:
-                print("[XML-RPC] Texto filtrado:", t)
-        except Exception as e:
-            print(f"XML-RPC Receive Error: {e}")
+    for _ in range(REPEAT_XMLRPC):
+        for i in range(len(xmlrpc_ports)):
+            try:
+                port = xmlrpc_ports[i]
+                server = xmlrpc.client.ServerProxy(f"http://localhost:{port}/RPC2", allow_none=True)
+                filtered_texts = server.get_filtered_texts()
+                for t in filtered_texts:
+                    print("[XML-RPC] Texto filtrado:", t)
+            except Exception:
+                print("XML-RPC Receive Error:")
+                traceback.print_exc()
 
 if __name__ == "__main__":
-    time.sleep(2)
+    time.sleep(3)
     start_time = time.time()
 
-    NUM_CLIENTS = 3
+    NUM_CLIENTS = 5 * num_nodos
     with concurrent.futures.ThreadPoolExecutor(max_workers=NUM_CLIENTS * 2) as executor:
         futures = []
 

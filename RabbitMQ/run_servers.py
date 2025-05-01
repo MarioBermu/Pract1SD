@@ -37,11 +37,11 @@ def get_queue_size(queue_name):
         connection.close()
         return message_count
     except Exception as e:
-        print(f"❌ Error al consultar tamaño de cola {queue_name}: {e}")
+        print(f" Error al consultar tamaño de cola {queue_name}: {e}")
         return 0
 
 def dynamic_scaling_loop(T_insult, C_insult, T_filter, C_filter):
-    print("🚀 Iniciando escalado dinámico basado en tráfico real y backlog...")
+    print("Iniciando escalado dinámico basado en tráfico real y backlog...")
     metrics = []
 
     last_insult_total = int(redis_client.get(INSULT_KEY) or 0)
@@ -123,7 +123,7 @@ if __name__ == "__main__":
     T_insult, C_insult = measure_T()
     T_filter, C_filter = measure_T()
 
-    # ⚙️ Lanzar 1 worker de cada tipo para arrancar
+    # Lanzar 1 worker de cada tipo para arrancar
     insult_procs.append(worker_insult())
     filter_procs.append(worker_filter())
 

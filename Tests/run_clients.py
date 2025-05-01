@@ -58,6 +58,8 @@ insults = ["Tonto", "Subnormal", "Zoquete", "Patán", "Idiota", "Sabandija", "Cr
 RESULTS_FILE = "results.json"
 LOCK = multiprocessing.Lock()
 RESULTS = []
+NUM_MESSAGES_PYRO = 1000 * num_nodos
+NUM_MESSAGES_XMLRPC = 50 * num_nodos
 
 def save_result(data):
     with LOCK:
@@ -77,7 +79,7 @@ def write_results_to_file():
             json.dump(existing_results, file, indent=4)
 
 def send_insults_pyro():
-    for i in range(100):
+    for i in range(NUM_MESSAGES_PYRO):
         insult = insults[i % len(insults)]
         try:
             proxy = pyro_insult_service[i % len(pyro_insult_service)]
@@ -86,7 +88,7 @@ def send_insults_pyro():
             print(f"Pyro4 Send Error: {type(e).__name__} - {e}")
 
 def receive_insults_pyro():
-    for i in range(100):
+    for i in range(NUM_MESSAGES_PYRO):
         try:
             proxy = pyro_insult_service[i % len(pyro_insult_service)]
             print("[Pyro4] Insulto aleatorio:", proxy.get_random_insult())
@@ -96,7 +98,7 @@ def receive_insults_pyro():
 def send_insults_xmlrpc():
     with open(SERVER_LIST_FILE, "r") as file:
         ports = json.load(file)
-    for i in range(50):
+    for i in range(NUM_MESSAGES_XMLRPC):
         insult = insults[i % len(insults)]
         try:
             port = ports[i % len(ports)]
@@ -121,7 +123,7 @@ if __name__ == "__main__":
     time.sleep(2)
     start_time = time.time()
 
-    NUM_CLIENTS = 2
+    NUM_CLIENTS = 5 * num_nodos
     with concurrent.futures.ThreadPoolExecutor(max_workers=NUM_CLIENTS * 2) as executor:
 
         futures = []

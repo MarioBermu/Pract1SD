@@ -7,6 +7,8 @@ import json
 import os
 
 SERVER_LIST_FILE = "active_servers.json"
+request_count = 0
+
 
 def register_server(port):
     """Registra el puerto del servidor en el archivo JSON"""
@@ -41,7 +43,10 @@ insult_list = []
 
 def store_insult(insult):
     """Almacena un insulto si no está en la lista"""
-    print(f"[XML-RPC] Storing insult: {insult}")
+    #print(f"[XML-RPC] Storing insult: {insult}")
+    global request_count
+    request_count += 1
+    print(f"[XML-RPC:{port}] Peticiones recibidas: {request_count}")
     if insult not in insult_list:
         insult_list.append(insult)
         return f"Stored new insult: {insult}"

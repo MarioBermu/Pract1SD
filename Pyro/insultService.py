@@ -7,8 +7,12 @@ import os
 class InsultService:
     def __init__(self):
         self.insults = []
+        self.request_count = 0
 
     def add_insult(self, insult):
+        self.request_count += 1
+        print(f"[PYRO:{os.getpid()}] Peticiones recibidas: {self.request_count}")
+
         if insult not in self.insults:
             self.insults.append(insult)
             return "Insulto agregado"
