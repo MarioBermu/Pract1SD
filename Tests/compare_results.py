@@ -4,60 +4,60 @@ import matplotlib.pyplot as plt
 RESULTS_FILE = "tests/results.json"
 RESULTS_FILE_FILTER = "tests/results_filter.json"
 
+# Mensajes por nodo según tu configuración
+MESSAGES_PER_NODE = {
+    "Insult Service": {"Pyro4": 10000, "XML-RPC": 5000},
+    "Filter Service": {"Pyro4": 400, "XML-RPC": 400},
+}
+
 def analyze_speedup(ax, data, title):
     pyro_times = {}
     xmlrpc_times = {}
 
-    # Clasificar los datos por tipo de servidor
     for entry in data:
-        nodes = entry["nodes"]
-        server_type = entry["service"]  
-        
-        if server_type == "Pyro4":
-            if nodes not in pyro_times:
-                pyro_times[nodes] = []
-            pyro_times[nodes].append(entry["time"])
-        elif server_type == "XML-RPC":
-            if nodes not in xmlrpc_times:
-                xmlrpc_times[nodes] = []
-            xmlrpc_times[nodes].append(entry["time"])
+        n = entry["nodes"]
+        if entry["service"] == "Pyro4":
+            pyro_times.setdefault(n, []).append(entry["time"])
+        elif entry["service"] == "XML-RPC":
+            xmlrpc_times.setdefault(n, []).append(entry["time"])
 
-    avg_pyro_times = {nodes: sum(pyro_times[nodes]) / len(pyro_times[nodes]) for nodes in pyro_times}
-    avg_xmlrpc_times = {nodes: sum(xmlrpc_times[nodes]) / len(xmlrpc_times[nodes]) for nodes in xmlrpc_times}
+    # Calcular promedios por nodo
+    avg_pyro = {n: sum(v)/len(v) for n, v in pyro_times.items()}
+    avg_xml  = {n: sum(v)/len(v)  for n, v in xmlrpc_times.items()}
 
-    if 1 in avg_pyro_times and 1 in avg_xmlrpc_times:
-        base_time_pyro = avg_pyro_times[1]
-        base_time_xmlrpc = avg_xmlrpc_times[1]
+    # Calcular speedup
+    # El speedup se calcula como el tiempo base dividido por el tiempo actual
+    if 1 in avg_pyro and 1 in avg_xml:
+        base_pyro = avg_pyro[1]
+        base_xml  = avg_xml[1]
+        speed_pyro = {n: base_pyro/avg_pyro[n] for n in sorted(avg_pyro)}
+        speed_xml  = {n: base_xml/avg_xml[n]   for n in sorted(avg_xml)}
 
-        pyro_speedups = {nodes: base_time_pyro / avg_pyro_times[nodes] for nodes in avg_pyro_times}
-        xmlrpc_speedups = {nodes: base_time_xmlrpc / avg_xmlrpc_times[nodes] for nodes in avg_xmlrpc_times}
+        # Etiquetas que incluyen msgs/nodo
+        msgs = MESSAGES_PER_NODE[title]
+        pyro_label   = f"Pyro4 ({msgs['Pyro4']} msgs/nodo)"
+        xmlrpc_label = f"XML-RPC ({msgs['XML-RPC']} msgs/nodo)"
 
-        # Graficar Pyro4
-        ax.plot(list(pyro_speedups.keys()), list(pyro_speedups.values()), label='Pyro4', marker='o', color='b', linestyle='-', linewidth=2, markersize=8)
+        # Graficar
+        ax.plot(list(speed_pyro), list(speed_pyro.values()),
+                label=pyro_label, marker='o', color='b', linestyle='-', linewidth=2, markersize=8)
+        ax.plot(list(speed_xml), list(speed_xml.values()),
+                label=xmlrpc_label, marker='s', color='r', linestyle='--', linewidth=2, markersize=8)
 
-        # Graficar XML-RPC
-        ax.plot(list(xmlrpc_speedups.keys()), list(xmlrpc_speedups.values()), label='XML-RPC', marker='s', color='r', linestyle='--', linewidth=2, markersize=8)
-
-        # Etiquetas y título
         ax.set_xlabel('Número de Nodos', fontsize=12)
         ax.set_ylabel('Speedup', fontsize=12)
-        ax.set_title(f'Speedup en función del número de nodos ({title})', fontsize=14)
+        ax.set_title(f'Speedup vs nodos ({title})', fontsize=14)
         ax.legend()
         ax.grid(True)
 
 if __name__ == "__main__":
-    with open(RESULTS_FILE, "r") as file:
-        data1 = json.load(file)
-    
-    with open(RESULTS_FILE_FILTER, "r") as file:
-        data2 = json.load(file)
+    with open(RESULTS_FILE, "r") as f:
+        data1 = json.load(f)
+    with open(RESULTS_FILE_FILTER, "r") as f:
+        data2 = json.load(f)
 
-    # Crear una figura con dos subgráficos (1 fila, 2 columnas)
     fig, axes = plt.subplots(1, 2, figsize=(14, 6))
-
     analyze_speedup(axes[0], data1, "Insult Service")
     analyze_speedup(axes[1], data2, "Filter Service")
-
-    # Mostrar la figura completa con ambas gráficas
-    plt.tight_layout()  
+    plt.tight_layout()
     plt.show()

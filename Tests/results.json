@@ -2,85 +2,113 @@
     {
         "service": "Pyro4",
         "operation": "send/receive",
-        "time": 0.8183090686798096,
-        "timestamp": "2025-05-01T19:52:41.204146",
+        "time": 17.72900891304016,
+        "timestamp": "2025-05-04T21:21:37.661948",
         "nodes": 1
     },
     {
         "service": "XML-RPC",
         "operation": "send/receive",
-        "time": 0.22108197212219238,
-        "timestamp": "2025-05-01T19:52:41.425333",
+        "time": 10.203557968139648,
+        "timestamp": "2025-05-04T21:21:47.865847",
         "nodes": 1
     },
     {
         "service": "Pyro4",
         "operation": "send/receive",
-        "time": 1.3134870529174805,
-        "timestamp": "2025-05-01T19:52:49.623772",
+        "time": 13.441025018692017,
+        "timestamp": "2025-05-04T21:22:45.695827",
         "nodes": 1
     },
     {
         "service": "XML-RPC",
         "operation": "send/receive",
-        "time": 0.41126585006713867,
-        "timestamp": "2025-05-01T19:52:50.035179",
+        "time": 9.670508861541748,
+        "timestamp": "2025-05-04T21:22:55.366485",
         "nodes": 1
     },
     {
         "service": "Pyro4",
         "operation": "send/receive",
-        "time": 3.4256930351257324,
-        "timestamp": "2025-05-01T19:53:35.013862",
+        "time": 9.204860925674438,
+        "timestamp": "2025-05-04T22:00:28.968258",
+        "nodes": 1
+    },
+    {
+        "service": "XML-RPC",
+        "operation": "send/receive",
+        "time": 10.189131021499634,
+        "timestamp": "2025-05-04T22:00:39.157540",
+        "nodes": 1
+    },
+    {
+        "service": "Pyro4",
+        "operation": "send/receive",
+        "time": 17.823302745819092,
+        "timestamp": "2025-05-04T22:07:42.459757",
         "nodes": 2
     },
     {
         "service": "XML-RPC",
         "operation": "send/receive",
-        "time": 0.9111649990081787,
-        "timestamp": "2025-05-01T19:53:35.925185",
+        "time": 19.121718883514404,
+        "timestamp": "2025-05-04T22:08:01.581789",
         "nodes": 2
     },
     {
         "service": "Pyro4",
         "operation": "send/receive",
-        "time": 3.227461814880371,
-        "timestamp": "2025-05-01T19:53:44.429861",
+        "time": 15.239375829696655,
+        "timestamp": "2025-05-04T22:08:25.119408",
         "nodes": 2
     },
     {
         "service": "XML-RPC",
         "operation": "send/receive",
-        "time": 0.9093260765075684,
-        "timestamp": "2025-05-01T19:53:45.339409",
+        "time": 19.52331781387329,
+        "timestamp": "2025-05-04T22:08:44.642854",
         "nodes": 2
     },
     {
         "service": "Pyro4",
         "operation": "send/receive",
-        "time": 8.578938245773315,
-        "timestamp": "2025-05-01T19:54:26.051422",
+        "time": 17.481218099594116,
+        "timestamp": "2025-05-04T22:14:48.553361",
         "nodes": 3
     },
     {
         "service": "XML-RPC",
         "operation": "send/receive",
-        "time": 2.4689278602600098,
-        "timestamp": "2025-05-01T19:54:28.520551",
+        "time": 24.348358869552612,
+        "timestamp": "2025-05-04T22:15:12.901974",
         "nodes": 3
     },
     {
         "service": "Pyro4",
         "operation": "send/receive",
-        "time": 8.659775972366333,
-        "timestamp": "2025-05-01T19:54:42.767205",
+        "time": 18.29614019393921,
+        "timestamp": "2025-05-04T22:17:26.191453",
         "nodes": 3
     },
     {
         "service": "XML-RPC",
         "operation": "send/receive",
-        "time": 2.6032702922821045,
-        "timestamp": "2025-05-01T19:54:45.370731",
+        "time": 24.396897077560425,
+        "timestamp": "2025-05-04T22:17:50.588542",
+        "nodes": 3
+    },
+    {
+        "service": "Pyro4",
+        "operation": "send/receive",
+        "time": 14.078161239624023,
+        "timestamp": "2025-05-04T22:25:38.999786",
+        "nodes": 3
+    },
+    {
+        "service": "XML-RPC",
+        "operation": "send/receive",
+        "time": 25.053637981414795,
+        "timestamp": "2025-05-04T22:26:04.053570",
         "nodes": 3
     }
 ]

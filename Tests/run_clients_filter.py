@@ -17,8 +17,8 @@ num_nodos = int(sys.argv[1])
 SERVER_LIST_FILE = "active_servers_filter.json"
 PYRO_FILTERS_FILE = "active_pyro_filters.txt"
 
-REPEAT_PYRO = 3 * num_nodos
-REPEAT_XMLRPC = 2 * num_nodos
+REPEAT_PYRO = 1000 
+REPEAT_XMLRPC = 100 
 
 def get_all_xmlrpc_ports():
     try:
@@ -128,7 +128,7 @@ if __name__ == "__main__":
     time.sleep(3)
     start_time = time.time()
 
-    NUM_CLIENTS = 5 * num_nodos
+    NUM_CLIENTS = 2 * num_nodos
     with concurrent.futures.ThreadPoolExecutor(max_workers=NUM_CLIENTS * 2) as executor:
         futures = []
 

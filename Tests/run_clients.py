@@ -58,8 +58,8 @@ insults = ["Tonto", "Subnormal", "Zoquete", "Patán", "Idiota", "Sabandija", "Cr
 RESULTS_FILE = "results.json"
 LOCK = multiprocessing.Lock()
 RESULTS = []
-NUM_MESSAGES_PYRO = 1000 * num_nodos
-NUM_MESSAGES_XMLRPC = 50 * num_nodos
+NUM_MESSAGES_PYRO = 1000 
+NUM_MESSAGES_XMLRPC = 500
 
 def save_result(data):
     with LOCK:
@@ -110,7 +110,7 @@ def send_insults_xmlrpc():
 def receive_insults_xmlrpc():
     with open(SERVER_LIST_FILE, "r") as file:
         ports = json.load(file)
-    for i in range(2):
+    for i in range(NUM_MESSAGES_XMLRPC):
         try:
             port = ports[i % len(ports)]
             server = xmlrpc.client.ServerProxy(f"http://localhost:{port}/RPC2", allow_none=True)
