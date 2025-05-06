@@ -1,51 +1,52 @@
 import pika
 import json
-import redis
 import time
 
-REDIS_KEY = "filter_processed_count"
+# RabbitMQ configuration
+RABBITMQ_HOST = 'localhost'
+QUEUE_RECEIVE = 'text_receive_queue'
+QUEUE_SEND = 'text_send_queue'
 
+# Insults set for censoring
+insults_set = {"Idiota", "Torpe", "Patán", "Zoquete", "Burro", "Cabezón", "Menso", "Necio"}
 
-rabbitmq_host = 'localhost'
-queue_receive = 'text_receive_queue'
-queue_send = 'text_send_queue'
-
-redis_client = redis.Redis(host='localhost', port=6379, db=0)  # Configuración de Redis
-insults = {"Idiota", "Torpe", "Patán", "Zoquete", "Burro", "Cabezón", "Menso", "Necio"}
-
+# Function to censor insults in text
 def censor_text(text):
-    time.sleep(0.1)
-    for insult in insults:
-        text = text.replace(insult, "CENSORED")
-    redis_client.rpush("RESULTS", text)  # Almacenar el texto procesado en Redis
-    print(f"Processed text: {text}")
-    redis_client.incr(REDIS_KEY)
-    return text
+    time.sleep(0.1)  # Simulate processing delay
+    censored = text
+    for insult in insults_set:
+        censored = censored.replace(insult, "CENSORED")
+    print(f"Processed text: {censored}")
+    return censored
 
+# Callback to handle messages
 def callback(ch, method, properties, body):
     data = json.loads(body.decode())
     action = data.get("action")
 
     if action == "send_text":
         text = data.get("text")
-        censor_text(text)
-        response = json.dumps({"status": "Text processed"})
+        censored = censor_text(text)
+        # Publish acknowledgment of processed text
+        response = json.dumps({"censored": censored})
+        ch.basic_publish(exchange='', routing_key=QUEUE_SEND, body=response)
+        print(f"Acknowledgment sent: {censored}")
 
     elif action == "get_texts":
-        texts = [redis_client.lindex("RESULTS", i).decode('utf-8') for i in range(redis_client.llen("RESULTS"))]
-        response = json.dumps({"texts": texts})
-        ch.basic_publish(exchange='', routing_key=queue_send, body=response)
-        print("Sent list of stored texts")
+        response = json.dumps({"status": "OK"})
+        ch.basic_publish(exchange='', routing_key=QUEUE_SEND, body=response)
+        print("Sent text processing status")
 
-    redis_client.incr(REDIS_KEY)
+    # Acknowledge message
     ch.basic_ack(delivery_tag=method.delivery_tag)
 
-connection = pika.BlockingConnection(pika.ConnectionParameters(host=rabbitmq_host))
+# Establish connection and declare queues
+connection = pika.BlockingConnection(pika.ConnectionParameters(host=RABBITMQ_HOST))
 channel = connection.channel()
-channel.queue_declare(queue=queue_receive)
-
-channel.queue_declare(queue=queue_send)
+channel.queue_declare(queue=QUEUE_RECEIVE, durable=False)
+channel.queue_declare(queue=QUEUE_SEND, durable=False)
 channel.basic_qos(prefetch_count=1)
-channel.basic_consume(queue=queue_receive, on_message_callback=callback)
-print("Text service is running and waiting for messages...")
+
+print("InsultFilter is running and waiting for messages...")
+channel.basic_consume(queue=QUEUE_RECEIVE, on_message_callback=callback)
 channel.start_consuming()

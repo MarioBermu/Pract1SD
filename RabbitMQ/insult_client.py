@@ -58,3 +58,11 @@ def get_insult_list():
     response = receive_response(channel)
     connection.close()
     return response.get("insults", [])
+
+def get_queue_length():
+    connection = pika.BlockingConnection(pika.ConnectionParameters('localhost'))
+    channel = connection.channel()
+    queue = channel.queue_declare(queue='insults', durable=True)
+    message_count = queue.method.message_count
+    connection.close()
+    return message_count
